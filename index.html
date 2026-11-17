@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The World Through My Eyes</title>
+    <meta name="description" content="Spotted: a little story about me. XOXO.">
+    
+    <!-- Tipografías -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Bodoni+Moda:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ============================================ -->
+    <!-- INTRO CINEMATOGRÁFICA - GOSSIP GIRL STYLE    -->
+    <!-- ============================================ -->
+    <div id="intro" class="intro">
+        <div class="intro-bg"></div>
+        
+        <!-- Palabra VOGUE (referencia estética) -->
+        <div class="vogue-word">VOGUE</div>
+        
+        <!-- Emojis flotantes NYC / It Girl -->
+        <div class="emojis-container" id="emojisContainer"></div>
+        
+        <!-- Título principal -->
+        <div class="intro-title">
+            <span class="intro-issue">SPOTTED · ISSUE N° 01 · NOVEMBER 2026</span>
+            <h1 class="intro-main-title">THE WORLD<br><em>THROUGH MY</em><br>EYES</h1>
+            <p class="intro-subtitle">You know you love me · XOXO</p>
+            <button class="intro-btn" id="enterBtn">
+                <span>ENTER MY WORLD</span>
+                <span class="btn-arrow">→</span>
+            </button>
+        </div>
+        
+        <!-- Corazón que se expande al hacer click -->
+<div class="intro-heart" id="introHeart"></div>
+        <button class="sound-toggle" id="soundToggle" aria-label="Activar sonido">
+            🔇
+        </button>
+    </div>
+
+           <!-- ============================ -->
+        <!-- SECCIÓN 1: WELCOME           -->
+        <!-- ============================ -->
+        <section class="section section-welcome" id="welcome">
+                        <!-- Lluvia de brillitos -->
+            <div class="welcome-sparkles" id="welcomeSparkles"></div>
+            <div class="section-number">01</div>
+            
+            <div class="welcome-grid">
+                <!-- Lado izquierdo: Texto -->
+                <div class="welcome-text">
+                    <span class="section-tag">CHAPTER ONE</span>
+                    <h2 class="section-title">Welcome<br><em>to my world</em></h2>
+                    
+                    <p class="welcome-paragraph">
+                        Nací en Moyobamba, una ciudad pequeña y llena de vida en San Martín, Perú. 
+                        Pero mi historia dio un giro cuando tenía apenas 3 años: me mudé a Lima 
+                        para estar cerca de mi papá. Desde entonces, Lima se convirtió en mi escenario, 
+                        mi punto de partida, mi propia Upper East Side particular.
+                    </p>
+                    <p class="welcome-paragraph">
+                        Lo que estás a punto de ver no es un currículum ni una presentación escolar. 
+                        Es una ventana. Una pequeña revista digital donde guardo pedacitos de mí: 
+                        lo que me hace reír, lo que me hace soñar, lo que me hace ser quien soy.
+                    </p>
+                    <p class="welcome-paragraph italic">
+                        Siéntate, respira, y acompáñame un rato. XOXO.
+                    </p>
+                </div>
+
+                <!-- Lado derecho: Foto Polaroid -->
+                <div class="welcome-visual">
+                    <div class="polaroid polaroid-clickable" id="openBabyGallery">
+                        <img src="assets/images/welcome.jpg" alt="Una postal de mi mundo" onerror="this.src='https://images.unsplash.com/photo-1522383225653-ed111181a951?w=600';">
+                        <span class="polaroid-caption">de Moyobamba a Lima · my story</span>
+                        <span class="polaroid-hint">click to see more ✦</span>
+                    </div>
+                </div>
+            </div>
+                        <!-- Flecha al siguiente capítulo -->
+            <div class="next-chapter-wrapper">
+                <span class="next-chapter-label">next chapter</span>
+                <button class="next-chapter-arrow" id="nextChapterBtn" aria-label="Siguiente capítulo">
+                    ↓
+                </button>
+            </div>
+        </section>
+
+                     <!-- ============================ -->
+        <!-- SECCIÓN 2: WHO AM I          -->
+        <!-- ============================ -->
+        <section class="section section-whoami" id="whoami">
+            <div class="section-number">02</div>
+            
+            <div class="whoami-spotted">
+                <span class="spotted-label">SPOTTED</span>
+                <h2 class="spotted-title whoami-title">
+                    <span class="typewriter" id="typewriterText"></span>
+                    <span class="typewriter-cursor">|</span>
+                </h2>
+                <p class="spotted-subtitle">Your favorite source into the scandalous lives of Manhattan's elite... but make it personal ✦</p>
+            </div>
+
+            <div class="profile-card">
+                <div class="profile-header">
+                    <span class="profile-tag">CLASSIFIED · CONFIDENTIAL</span>
+                    <h3 class="profile-name">THE ALEXANDRA FILE</h3>
+                    <div class="profile-divider"></div>
+                </div>
+                
+                <div class="profile-grid">
+                    <div class="profile-item">
+                        <span class="profile-label">Name</span>
+                        <span class="profile-value">Alexandra Mondragón</span>
+                    </div>
+                    <div class="profile-item">
+                        <span class="profile-label">Origin</span>
+                        <span class="profile-value">Moyobamba → Lima</span>
+                    </div>
+                    <div class="profile-item">
+                        <span class="profile-label">Role</span>
+                        <span class="profile-value">Daddy's girl ✦</span>
+                    </div>
+                    <div class="profile-item">
+                        <span class="profile-label">Mood</span>
+                        <span class="profile-value">Nostálgica & soñadora ✦</span>
+                    </div>
+                    <div class="profile-item">
+                        <span class="profile-label">Faith</span>
+                        <span class="profile-value">Con Dios en el centro</span>
+                    </div>
+                    <div class="profile-item">
+                        <span class="profile-label">Vibe</span>
+                        <span class="profile-value">Gossip Girl meets Peru</span>
+                    </div>
+                    <div class="profile-item">
+                        <span class="profile-label">Dream</span>
+                        <span class="profile-value">Lago de Como · Italia</span>
+                    </div>
+                    <div class="profile-item">
+                        <span class="profile-label">Future</span>
+                        <span class="profile-value">Dra. Mondragón, pediatra</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="traits-reveal">
+                <h3 class="traits-heading">The <em>real</em> me</h3>
+                <div class="traits-list">
+                    <span class="trait-reveal" style="--delay: 0.1s;">Sentimental</span>
+                    <span class="trait-reveal" style="--delay: 0.3s;">Empática</span>
+                    <span class="trait-reveal" style="--delay: 0.5s;">Noble</span>
+                    <span class="trait-reveal" style="--delay: 0.7s;">Amorosa</span>
+                    <span class="trait-reveal" style="--delay: 0.9s;">Amable</span>
+                    <span class="trait-reveal" style="--delay: 1.1s;">Intensa</span>
+                    <span class="trait-reveal" style="--delay: 1.3s;">Nostálgica</span>
+                    <span class="trait-reveal" style="--delay: 1.5s;">Dramática con papá</span>
+                    <span class="trait-reveal" style="--delay: 1.7s;">Renegona con Andrea</span>
+                    <span class="trait-reveal trait-special" style="--delay: 1.9s;">✦ Fe profunda ✦</span>
+                </div>
+            </div>
+
+            <div class="mood-board">
+                <h3 class="mood-heading">My <em>aesthetic</em></h3>
+                <div class="heart-mood">
+                    <div class="heart-img" style="--col: 2; --row: 1;"><img src="assets/images/mood1.jpg" alt="Aesthetic" onerror="this.src='https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=300';"></div>
+                    <div class="heart-img" style="--col: 3; --row: 1;"><img src="assets/images/mood2.jpg" alt="Aesthetic" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300';"></div>
+                    <div class="heart-img" style="--col: 5; --row: 1;"><img src="assets/images/mood3.jpg" alt="Aesthetic" onerror="this.src='https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=300';"></div>
+                    <div class="heart-img" style="--col: 6; --row: 1;"><img src="assets/images/mood4.jpg" alt="Aesthetic" onerror="this.src='https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=300';"></div>
+                    <div class="heart-img" style="--col: 1; --row: 2;"><img src="assets/images/mood5.jpg" alt="Aesthetic" onerror="this.src='https://images.unsplash.com/photo-1496440737103-cd596325d314?w=300';"></div>
+                    <div class="heart-img" style="--col: 4; --row: 2;"><img src="assets/images/mood6.jpg" alt="Aesthetic" onerror="this.src='https://images.unsplash.com/photo-1522335789203-aaa2f6a9c8c3?w=300';"></div>
+                    <div class="heart-img" style="--col: 7; --row: 2;"><img src="assets/images/mood7.jpg" alt="Aesthetic" onerror="this.src='https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=300';"></div>
+                    <div class="heart-img" style="--col: 3; --row: 3;"><img src="assets/images/mood8.jpg" alt="Aesthetic" onerror="this.src='https://images.unsplash.com/photo-1519689680058-324335c77eba?w=300';"></div>
+                    <div class="heart-img" style="--col: 5; --row: 3;"><img src="assets/images/mood9.jpg" alt="Aesthetic" onerror="this.src='https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=300';"></div>
+                    <div class="heart-img" style="--col: 4; --row: 4;"><img src="assets/images/mood10.jpg" alt="Aesthetic" onerror="this.src='https://images.unsplash.com/photo-1516627145497-66534886c574?w=300';"></div>
+                    <div class="heart-img" style="--col: 4; --row: 5;"><img src="assets/images/mood11.jpg" alt="Aesthetic" onerror="this.src='https://images.unsplash.com/photo-1475274047050-1d0c55b91478?w=300';"></div>
+                    <div class="heart-img" style="--col: 4; --row: 6;"><img src="assets/images/mood12.jpg" alt="Aesthetic" onerror="this.src='https://images.unsplash.com/photo-1522383225653-ed111181a951?w=300';"></div>
+                </div>
+            </div>
+                        <!-- Botón "Turn the page" -->
+            <div class="turn-page-wrapper" id="turnPageBtn">
+                <div class="turn-page-corner"></div>
+                <span class="turn-page-text">Turn the page</span>
+                <span class="turn-page-label">→ little things I love</span>
+            </div>
+        </section>
+
+                  <!-- ============================ -->
+        <!-- SECCIÓN 3: LITTLE THINGS     -->
+        <!-- ============================ -->
+        <section class="section section-love" id="love">
+            <div class="section-number">03</div>
+            
+                       <!-- Header tipo Portada de Revista -->
+            <div class="diary-header vogue-header">
+                <div class="vogue-top-bar">
+                    <span>THE WORLD THROUGH MY EYES</span>
+                    <span>·</span>
+                    <span>ISSUE Nº 03</span>
+                    <span>·</span>
+                    <span>EXCLUSIVE</span>
+                </div>
+                
+                <h2 class="diary-title vogue-masthead">
+                    <span class="vogue-small">Little things</span>
+                    <span class="vogue-huge">I <em>LOVE</em></span>
+                </h2>
+                
+                <p class="vogue-subhead">A VISUAL DIARY OF WHAT MAKES MY HEART SING ✦</p>
+                
+                <div class="vogue-decoration-line"></div>
+            </div>
+
+            <!-- Marca de agua gigante de fondo -->
+            <div class="vogue-watermark">03</div>
+            <!-- Grid de páginas del diario (solo imágenes misteriosas) -->
+            <div class="diary-pages">
+                
+                <!-- PÁGINA 1: SERIES -->
+                <article class="diary-page" data-sound="click" data-detail="series">
+                    <div class="page-number">Nº 01</div>
+                    <div class="page-image-wrapper">
+                        <img src="assets/images/series.jpg" alt="Series" onerror="this.src='https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?w=800';">
+                        <div class="page-hover-overlay">
+                            <span class="page-hover-text">click to discover ✦</span>
+                        </div>
+                    </div>
+                    <div class="page-corner"></div>
+                </article>
+
+                <!-- PÁGINA 2: BAILE -->
+                <article class="diary-page" data-sound="click" data-detail="dance">
+                    <div class="page-number">Nº 02</div>
+                    <div class="page-image-wrapper">
+                        <img src="assets/images/dance.jpg" alt="Bailar" onerror="this.src='https://images.unsplash.com/photo-1504609813442-a8924e83f76e?w=600';">
+                        <div class="page-hover-overlay">
+                            <span class="page-hover-text">click to discover ✦</span>
+                        </div>
+                    </div>
+                    <div class="page-corner"></div>
+                </article>
+
+                <!-- PÁGINA 3: INFANCIA -->
+                <article class="diary-page" data-sound="click" data-detail="childhood">
+                    <div class="page-number">Nº 03</div>
+                    <div class="page-image-wrapper">
+                        <img src="assets/images/childhood.jpg" alt="Infancia" onerror="this.src='https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=500';">
+                        <div class="page-hover-overlay">
+                            <span class="page-hover-text">click to discover ✦</span>
+                        </div>
+                    </div>
+                    <div class="page-corner"></div>
+                </article>
+
+                <!-- PÁGINA 4: MODA -->
+                <article class="diary-page" data-sound="click" data-detail="fashion">
+                    <div class="page-number">Nº 04</div>
+                    <div class="page-image-wrapper">
+                        <img src="assets/images/fashion.jpg" alt="Moda" onerror="this.src='https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=900';">
+                        <div class="page-hover-overlay">
+                            <span class="page-hover-text">click to discover ✦</span>
+                        </div>
+                    </div>
+                    <div class="page-corner"></div>
+                </article>
+
+                <!-- PÁGINA 5: COCINA -->
+                <article class="diary-page" data-sound="click" data-detail="cooking">
+                    <div class="page-number">Nº 05</div>
+                    <div class="page-image-wrapper">
+                        <img src="assets/images/cooking.jpg" alt="Cocinar" onerror="this.src='https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600';">
+                        <div class="page-hover-overlay">
+                            <span class="page-hover-text">click to discover ✦</span>
+                        </div>
+                    </div>
+                    <div class="page-corner"></div>
+                </article>
+
+                <!-- PÁGINA 6: MAQUILLAJE -->
+                <article class="diary-page" data-sound="click" data-detail="makeup">
+                    <div class="page-number">Nº 06</div>
+                    <div class="page-image-wrapper">
+                        <img src="assets/images/makeup.jpg" alt="Maquillaje" onerror="this.src='https://images.unsplash.com/photo-1522335789203-aaa2f6a9c8c3?w=500';">
+                        <div class="page-hover-overlay">
+                            <span class="page-hover-text">click to discover ✦</span>
+                        </div>
+                    </div>
+                    <div class="page-corner"></div>
+                </article>
+
+            </div>
+
+                        <!-- Footer estilo revista con código de barras -->
+            <div class="diary-footer vogue-footer">
+                <div class="vogue-barcode">
+                    <div class="barcode-lines"></div>
+                    <div class="barcode-text">9 771234 567003</div>
+                </div>
+                <div class="vogue-quote">
+                    <p><em>"Las pequeñas cosas hacen que la vida sea grande."</em></p>
+                    <span class="diary-xoxo">XOXO</span>
+                </div>
+                <div class="vogue-price">
+                    <span>PRICELESS</span>
+                </div>
+            </div>
+
+            <!-- Botón "Golden Key" para ir al siguiente chapter -->
+            <a href="#talents" class="golden-key-wrapper" id="goldenKeyBtn">
+                <span class="golden-key-label">unlock next</span>
+                <div class="golden-key-icon">🔑</div>
+                <span class="golden-key-next">→ my talents</span>
+          </a>
+
+        </section>
+
+
+               <!-- ============================ -->
+        <!-- SECCIÓN 4: MY TALENTS        -->
+        <!-- ============================ -->
+        <section class="section section-talents" id="talents">
+            <div class="section-number">04</div>
+            
+            <!-- Header tipo colección exclusiva -->
+            <div class="collection-header">
+                <span class="collection-tag">CHAPTER FOUR · EXCLUSIVE COLLECTION</span>
+                <h2 class="collection-title">The <em>Talent</em><br>Collection</h2>
+                <p class="collection-subtitle">five rare pieces, one unique soul ✦</p>
+                <div class="collection-stats">
+                    <div class="stat">
+                        <span class="stat-number">05</span>
+                        <span class="stat-label">PIECES</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">∞</span>
+                        <span class="stat-label">POSSIBILITIES</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">01</span>
+                        <span class="stat-label">OF A KIND</span>
+                    </div>
+                </div>
+            </div>
+
+                        <!-- Vitrina de tarjetas coleccionables -->
+            <div class="talent-vitrine">
+                
+                <!-- TARJETA 1: THE ART READER -->
+                <article class="talent-card" data-sound="click" data-talent="art">
+                    <div class="card-rarity">LEGENDARY</div>
+                    <div class="card-edition">Nº 01/05</div>
+                    <div class="card-shine"></div>
+                    <div class="card-content">
+                        <div class="card-icon">🎨</div>
+                        <h3 class="card-name">The Art<br><em>Reader</em></h3>
+                        <p class="card-description">Leer entre líneas, sentir lo que otros callan.</p>
+                    </div>
+                    <div class="card-footer">
+                        <span class="card-cta">tap to reveal ✦</span>
+                    </div>
+                </article>
+
+                <!-- TARJETA 2: THE SOUL SEEKER -->
+                <article class="talent-card" data-sound="click" data-talent="soul">
+                    <div class="card-rarity">EPIC</div>
+                    <div class="card-edition">Nº 02/05</div>
+                    <div class="card-shine"></div>
+                    <div class="card-content">
+                        <div class="card-icon">🌙</div>
+                        <h3 class="card-name">The Soul<br><em>Seeker</em></h3>
+                        <p class="card-description">Mi mente es mi lugar favorito para perderme y encontrarme.</p>
+                    </div>
+                    <div class="card-footer">
+                        <span class="card-cta">tap to reveal ✦</span>
+                    </div>
+                </article>
+
+                <!-- TARJETA 3: THE SWEET MAKER (MOVIDA AQUÍ, DEBAJO DE SOUL) -->
+                <article class="talent-card" data-sound="click" data-talent="sweet">
+                    <div class="card-rarity">RARE</div>
+                    <div class="card-edition">Nº 03/05</div>
+                    <div class="card-shine"></div>
+                    <div class="card-content">
+                        <div class="card-icon">🧁</div>
+                        <h3 class="card-name">The Sweet<br><em>Maker</em></h3>
+                        <p class="card-description">El arte también se saborea.</p>
+                    </div>
+                    <div class="card-footer">
+                        <span class="card-cta">tap to reveal ✦</span>
+                    </div>
+                </article>
+
+                <!-- TARJETA 4: THE AESTHETIC EYE -->
+                <article class="talent-card" data-sound="click" data-talent="aesthetic">
+                    <div class="card-rarity">LEGENDARY</div>
+                    <div class="card-edition">Nº 04/05</div>
+                    <div class="card-shine"></div>
+                    <div class="card-content">
+                        <div class="card-icon">👁️</div>
+                        <h3 class="card-name">The Aesthetic<br><em>Eye</em></h3>
+                        <p class="card-description">Veo belleza donde otros ven lo cotidiano.</p>
+                    </div>
+                    <div class="card-footer">
+                        <span class="card-cta">tap to reveal ✦</span>
+                    </div>
+                </article>
+
+                <!-- TARJETA 5: THE CREATOR -->
+                <article class="talent-card" data-sound="click" data-talent="creator">
+                    <div class="card-rarity">EPIC</div>
+                    <div class="card-edition">Nº 05/05</div>
+                    <div class="card-shine"></div>
+                    <div class="card-content">
+                        <div class="card-icon">✋</div>
+                        <h3 class="card-name">The<br><em>Creator</em></h3>
+                        <p class="card-description">Mis manos crean cosas que mi corazón imagina.</p>
+                    </div>
+                    <div class="card-footer">
+                        <span class="card-cta">tap to reveal ✦</span>
+                    </div>
+                </article>
+
+                <!-- TARJETA 6: WILD CARD (BOTÓN AL SIGUIENTE CHAPTER) -->
+                <a href="#family" class="talent-card wild-card" id="wildCardBtn" onclick="wildCardClick(event)">
+                    <div class="card-rarity">WILD</div>
+                    <div class="card-edition">SECRET</div>
+                    <div class="card-shine"></div>
+                    <div class="wild-card-glow"></div>
+                    <div class="card-content">
+                        <div class="card-icon wild-icon">✦</div>
+                        <h3 class="card-name">Next<br><em>Chapter</em></h3>
+                        <p class="card-description">My Family awaits...</p>
+                    </div>
+                    <div class="card-footer">
+                        <span class="card-cta">unlock the next ✦</span>
+                    </div>
+                </a>
+
+        </section> <!-- Cierre de My Family -->
+
+        <!-- ============================================ -->
+        <!-- MODAL DE DETALLES DEL TALENTO                -->
+        <!-- ============================================ -->
+        <div class="talent-modal" id="talentModal">
+            <div class="talent-modal-backdrop"></div>
+            <div class="talent-modal-content">
+                <button class="talent-modal-close" id="talentModalClose">✕</button>
+                
+                <div class="talent-modal-header">
+                    <span class="talent-modal-rarity" id="talentModalRarity">LEGENDARY</span>
+                    <span class="talent-modal-edition" id="talentModalEdition">Nº 01/05</span>
+                </div>
+
+                <div class="talent-modal-body">
+                    <div class="talent-modal-icon" id="talentModalIcon">🎨</div>
+                    <h3 class="talent-modal-title" id="talentModalTitle"></h3>
+                    <p class="talent-modal-description" id="talentModalDescription"></p>
+                    <div class="talent-modal-quote" id="talentModalQuote"></div>
+                </div>
+
+                <div class="talent-modal-footer">
+                    <span>✦</span>
+                    <span>✦</span>
+                    <span>✦</span>
+                </div>
+            </div>
+        </div>
+                 <!-- ============================ -->
+        <!-- SECCIÓN 5: MY FAMILY         -->
+        <!-- ============================ -->
+        <section class="section section-family" id="family">
+            <div class="section-number">05</div>
+            
+            <!-- Header emocional -->
+            <div class="family-gallery-header">
+                <span class="family-gallery-tag">CHAPTER FIVE · THE HEARTBEATS</span>
+                <h2 class="family-gallery-title">The people<br>who <em>made me</em></h2>
+                <p class="family-gallery-subtitle">los corazones que laten junto al mío. mi refugio, mi fuerza, mi hogar ✦</p>
+                <div class="family-gallery-line"></div>
+            </div>
+
+            <!-- Galería de retratos familiares -->
+            <div class="family-portrait-gallery">
+                
+                <!-- PAPÁ -->
+                <article class="family-portrait" data-sound="click" data-family="dad">
+                    <div class="portrait-frame">
+                        <div class="portrait-corner tl"></div>
+                        <div class="portrait-corner tr"></div>
+                        <div class="portrait-corner bl"></div>
+                        <div class="portrait-corner br"></div>
+                        <div class="portrait-image">
+                            <img src="assets/images/dad.jpg" alt="Papá" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500';">
+                            <div class="portrait-shine"></div>
+                        </div>
+                    </div>
+                    <div class="portrait-info">
+                        <span class="portrait-memory">MEMORY Nº 01</span>
+                        <h3 class="portrait-name">Mi papá</h3>
+                        <p class="portrait-role">El héroe de mi historia</p>
+                        <span class="portrait-cta">read my letter ✦</span>
+                    </div>
+                </article>
+
+                <!-- MAMÁ -->
+                <article class="family-portrait" data-sound="click" data-family="mom">
+                    <div class="portrait-frame">
+                        <div class="portrait-corner tl"></div>
+                        <div class="portrait-corner tr"></div>
+                        <div class="portrait-corner bl"></div>
+                        <div class="portrait-corner br"></div>
+                        <div class="portrait-image">
+                            <img src="assets/images/mom.jpg" alt="Mamá" onerror="this.src='https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=500';">
+                            <div class="portrait-shine"></div>
+                        </div>
+                    </div>
+                    <div class="portrait-info">
+                        <span class="portrait-memory">MEMORY Nº 02</span>
+                        <h3 class="portrait-name">Mi mamá</h3>
+                        <p class="portrait-role">Mi refugio y mi todo</p>
+                        <span class="portrait-cta">read my letter ✦</span>
+                    </div>
+                </article>
+
+                <!-- ANDREA -->
+                <article class="family-portrait" data-sound="click" data-family="andrea">
+                    <div class="portrait-frame">
+                        <div class="portrait-corner tl"></div>
+                        <div class="portrait-corner tr"></div>
+                        <div class="portrait-corner bl"></div>
+                        <div class="portrait-corner br"></div>
+                        <div class="portrait-image">
+                            <img src="assets/images/andrea.jpg" alt="Andrea" onerror="this.src='https://images.unsplash.com/photo-1517841905240-472988babdf9?w=500';">
+                            <div class="portrait-shine"></div>
+                        </div>
+                    </div>
+                    <div class="portrait-info">
+                        <span class="portrait-memory">MEMORY Nº 03</span>
+                        <h3 class="portrait-name">Andrea</h3>
+                        <p class="portrait-role">Mi hermana menor</p>
+                        <span class="portrait-cta">read my letter ✦</span>
+                    </div>
+                </article>
+
+                <!-- MAMÁ CHARO -->
+                <article class="family-portrait" data-sound="click" data-family="charo">
+                    <div class="portrait-frame">
+                        <div class="portrait-corner tl"></div>
+                        <div class="portrait-corner tr"></div>
+                        <div class="portrait-corner bl"></div>
+                        <div class="portrait-corner br"></div>
+                        <div class="portrait-image">
+                            <img src="assets/images/charo.jpg" alt="Mamá Charo" onerror="this.src='https://images.unsplash.com/photo-1581579438747-104c53d7fbc4?w=500';">
+                            <div class="portrait-shine"></div>
+                        </div>
+                    </div>
+                    <div class="portrait-info">
+                        <span class="portrait-memory">MEMORY Nº 04</span>
+                        <h3 class="portrait-name">Mamá Charo</h3>
+                        <p class="portrait-role">Mi abuelita, mi segunda mamá</p>
+                        <span class="portrait-cta">read my letter ✦</span>
+                    </div>
+                </article>
+
+                <!-- VALENTINA -->
+                <article class="family-portrait" data-sound="click" data-family="valentina">
+                    <div class="portrait-frame">
+                        <div class="portrait-corner tl"></div>
+                        <div class="portrait-corner tr"></div>
+                        <div class="portrait-corner bl"></div>
+                        <div class="portrait-corner br"></div>
+                        <div class="portrait-image">
+                            <img src="assets/images/valentina.jpg" alt="Valentina" onerror="this.src='https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500';">
+                            <div class="portrait-shine"></div>
+                        </div>
+                    </div>
+                    <div class="portrait-info">
+                        <span class="portrait-memory">MEMORY Nº 05</span>
+                        <h3 class="portrait-name">Vale</h3>
+                        <p class="portrait-role">Mi prima, mi hermana del alma</p>
+                        <span class="portrait-cta">read my letter ✦</span>
+                    </div>
+                </article>
+
+                <!-- LLUVIA -->
+                <article class="family-portrait" data-sound="click" data-family="lluvia">
+                    <div class="portrait-frame">
+                        <div class="portrait-corner tl"></div>
+                        <div class="portrait-corner tr"></div>
+                        <div class="portrait-corner bl"></div>
+                        <div class="portrait-corner br"></div>
+                        <div class="portrait-image">
+                            <img src="assets/images/lluvia.jpg" alt="Lluvia" onerror="this.src='https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=500';">
+                            <div class="portrait-shine"></div>
+                        </div>
+                    </div>
+                    <div class="portrait-info">
+                        <span class="portrait-memory">MEMORY Nº 06</span>
+                        <h3 class="portrait-name">Lluvia</h3>
+                        <p class="portrait-role">Mi prima, mi cómplice</p>
+                        <span class="portrait-cta">read my letter ✦</span>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- Frase de fe -->
+            <div class="family-faith-quote">
+                <div class="faith-decoration">✦</div>
+                <p>Y por encima de todo, <em>Dios</em>.<br>El centro silencioso de cada decisión mía.</p>
+                <div class="faith-decoration">✦</div>
+            </div>
+
+           <!-- 1. EL BOTÓN MÁGICO -->
+<button id="nextChapterBtn" class="magic-button">
+    <span>Descubrir el Next Capítulo</span>
+    <span class="sparkle">✨</span>
+</button>
+
+<!-- ... (resto de tu contenido) ... -->
+
+<!-- 2. LA CAPA DE ANIMACIÓN (Pega esto justo antes de </body> al final de tu archivo) -->
+<div id="transitionOverlay" class="transition-overlay"></div>
+
+        </section> <!-- Cierre de My Family -->
+
+        <!-- ============================================ -->
+        <!-- MODAL CARTA MANUSCRITA FAMILIAR              -->
+        <!-- ============================================ -->
+        <div class="family-letter-modal" id="familyLetterModal">
+            <div class="family-letter-backdrop"></div>
+            <div class="family-letter-content">
+                <button class="family-letter-close" id="familyLetterClose">✕</button>
+                
+                <div class="family-letter-header">
+                    <span class="family-letter-memory" id="familyLetterMemory">MEMORY Nº 01</span>
+                    <span class="family-letter-wax">♡</span>
+                </div>
+
+                <div class="family-letter-body">
+                    <h3 class="family-letter-name" id="familyLetterName"></h3>
+                    <p class="family-letter-role" id="familyLetterRole"></p>
+                    <div class="family-letter-divider"></div>
+                    <p class="family-letter-text" id="familyLetterText"></p>
+                    <div class="family-letter-signature">
+                        <span>con todo mi amor,</span>
+                        <span class="signature-name">Alexandra ♡</span>
+                    </div>
+                </div>
+
+                <div class="family-letter-footer">
+                    <span>✦</span>
+                    <span>✦</span>
+                    <span>✦</span>
+                </div>
+            </div>
+        </div>
+
+                <!-- ============================ -->
+        <!-- SECCIÓN 6: MY FRIENDS        -->
+        <!-- ============================ -->
+        <section class="section section-friends" id="friends">
+            <div class="section-number">06</div>
+            
+            <!-- Mariposas flotando -->
+            <div class="butterflies-container" id="butterfliesContainer"></div>
+            
+            <div class="friends-header">
+                <span class="section-tag">CHAPTER SIX</span>
+                <h2 class="section-title">My <em>friends</em></h2>
+                <p class="section-intro">
+                    Spotted: las personas que eligieron caminar conmigo. 
+                    Las que están, las que estuvieron, las que siempre serán parte de mi historia.
+                </p>
+            </div>
+
+            <!-- CARRUSEL INFINITO -->
+            <div class="friends-carousel">
+                <div class="friends-track">
+                    <!-- PRIMER SET -->
+                    <div class="friend-card" data-sound="click" data-name="Iker" data-text="Te quiero muchísimo y guardo con mucho cariño todas las experiencias que hemos compartido. Hemos vivido momentos muy bonitos, de esos que recuerdo con una sonrisa porque fueron tan especiales y cute a su manera. Me alegra haber coincidido contigo y haber podido compartir tantas cosas. Espero que siempre seas feliz, que te vaya increíble en todo lo que te propongas y que nunca pierdas esa parte bonita de ti. Te quiero mucho y siempre voy a recordar con cariño nuestros momentos.">
+                        <div class="friend-photo">
+                            <img src="assets/images/iker.jpg" alt="Iker" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400';">
+                            <div class="sparkles"></div>
+                        </div>
+                        <div class="friend-info">
+                            <h3>Iker ♡</h3>
+                            <p class="friend-label">Click para leer mi dedicatoria</p>
+                        </div>
+                    </div>
+
+                    <div class="friend-card" data-sound="click" data-name="Sofía" data-text="Te conozco desde segundo grado, aunque nuestra amistad empezó en quinto de primaria. Tenemos muchísimos recuerdos juntas, desde los más bonitos hasta los más graciosos. Hemos pasado por tantas cosas, incluso por varias peleas y discusiones, pero siempre hemos encontrado la manera de arreglarlas y seguir adelante. Creo que eso también demuestra lo bonita que es nuestra amistad. Me alegra muchísimo que, después de tantos años y experiencias, sigamos siendo amigas. Te quiero mucho y siempre voy a guardar con cariño todo lo que hemos vivido.">
+                        <div class="friend-photo">
+                            <img src="assets/images/sofia.jpg" alt="Sofía" onerror="this.src='https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400';">
+                            <div class="sparkles"></div>
+                        </div>
+                        <div class="friend-info">
+                            <h3>Sofía ♡</h3>
+                            <p class="friend-label">Click para leer mi dedicatoria</p>
+                        </div>
+                    </div>
+
+                    <div class="friend-card" data-sound="click" data-name="Marce" data-text="Tengo muchísimos recuerdos bonitos contigo desde sexto grado. Siempre has sido una de mis mejores amigas y no sabes cuánto te quiero. Me he divertido muchísimo a tu lado y guardo con mucho cariño todas las experiencias que hemos compartido. Eres una persona increíble, amable, linda y muy honesta. Confío muchísimo en ti y espero que nunca dejemos de ser mejores amigas. Te amo muchísimo y deseo que sigamos creando recuerdos juntas por muchos años más.">
+                        <div class="friend-photo">
+                            <img src="assets/images/marcela.jpg" alt="Marcela" onerror="this.src='https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400';">
+                            <div class="sparkles"></div>
+                        </div>
+                        <div class="friend-info">
+                            <h3>Marce ♡</h3>
+                            <p class="friend-label">Click para leer mi dedicatoria</p>
+                        </div>
+                    </div>
+
+                    <div class="friend-card" data-sound="click" data-name="Nati" data-text="Aunque te conocí recién este año, siento que conectamos muchísimo. Creo que nuestras personalidades se parecen bastante y que, de alguna manera, tu forma de ser también me ha ayudado a sentirme más libre para ser yo misma. Eres una chica muy justa, graciosa y auténtica. Me encanta que podamos compartir tantas cosas y que nuestra amistad se haya dado de una manera tan natural. Estoy muy feliz de haberte conocido y espero que sigamos compartiendo muchísimas experiencias juntas.">
+                        <div class="friend-photo">
+                            <img src="assets/images/natalia.jpg" alt="Natalia" onerror="this.src='https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400';">
+                            <div class="sparkles"></div>
+                        </div>
+                        <div class="friend-info">
+                            <h3>Nati ♡</h3>
+                            <p class="friend-label">Click para leer mi dedicatoria</p>
+                        </div>
+                    </div>
+
+                    <div class="friend-card" data-sound="click" data-name="Cris" data-text="Desde que te conocí en octavo siento que conectamos de una manera muy bonita. Recuerdo muchísimo todos los momentos en los que estuviste para mí, especialmente cuando no me sentía bien. Hemos compartido tantas conversaciones, lágrimas y risas que guardo con muchísimo cariño. Eres una chica demasiado linda, graciosa y alegre. Algo que admiro de ti es que, incluso cuando no estás pasando por tus mejores momentos, siempre tienes esa alegría tan característica de tu personalidad. Te quiero muchísimo y agradezco haberte encontrado.">
+                        <div class="friend-photo">
+                            <img src="assets/images/criss.jpg" alt="Criss" onerror="this.src='https://images.unsplash.com/photo-1524504388940-b1c3ab2b17ef?w=400';">
+                            <div class="sparkles"></div>
+                        </div>
+                        <div class="friend-info">
+                            <h3>Cris ♡</h3>
+                            <p class="friend-label">Click para leer mi dedicatoria</p>
+                        </div>
+                    </div>
+
+                    <div class="friend-card" data-sound="click" data-name="María Paz" data-text="Te conozco desde octavo y, aunque al principio no nos llevábamos precisamente bien —¡y tú lo sabes!—, me alegra muchísimo haber tenido la oportunidad de conocerte de verdad. Eres una chica muy linda, inteligente y con la que puedo contar. Me gusta que siempre estés dispuesta a ayudarme y que, cuando estoy triste, sepas darme consejos que realmente me hacen pensar. Me alegra haber cambiado aquella primera impresión y haber construido una amistad tan bonita contigo. Te quiero mucho.">
+                        <div class="friend-photo">
+                            <img src="assets/images/mariapaz.jpg" alt="Mariapaz" onerror="this.src='https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=400';">
+                            <div class="sparkles"></div>
+                        </div>
+                        <div class="friend-info">
+                            <h3>María Paz ♡</h3>
+                            <p class="friend-label">Click para leer mi dedicatoria</p>
+                        </div>
+                    </div>
+
+                    <div class="friend-card" data-sound="click" data-name="Luciana" data-text="Te conozco desde séptimo, pero siento que este año nos hemos vuelto muchísimo más cercanas. Me pareces una chica demasiado linda, alegre y graciosa. Me encanta tu personalidad porque eres auténtica, tienes una manera muy tuya de ser y no tienes miedo de mostrarte tal como eres. Me gusta mucho haber podido conocerte más y compartir tantos momentos contigo. Espero que nuestra amistad siga creciendo y que tengamos muchísimos recuerdos más.">
+                        <div class="friend-photo">
+                            <img src="assets/images/luciana.jpg" alt="Luciana" onerror="this.src='https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?w=400';">
+                            <div class="sparkles"></div>
+                        </div>
+                        <div class="friend-info">
+                            <h3>Luciana ♡</h3>
+                            <p class="friend-label">Click para leer mi dedicatoria</p>
+                        </div>
+                    </div>
+
+                    <div class="friend-card" data-sound="click" data-name="Romina" data-text="Aunque te conocí recién este año, siento que hemos conectado muchísimo. Eres una chica demasiado linda, alegre y graciosa. Te quiero mucho y agradezco que hayas estado para mí en momentos en los que no me sentía tan bien. Me gusta saber que puedo contarte mis cosas y que siempre encuentro en ti a alguien con quien puedo hablar y reírme. Me alegra muchísimo haberte conocido y espero que sigamos compartiendo muchos momentos bonitos.">
+                        <div class="friend-photo">
+                            <img src="assets/images/romina.jpg" alt="Romina" onerror="this.src='https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=400';">
+                            <div class="sparkles"></div>
+                        </div>
+                        <div class="friend-info">
+                            <h3>Romina ♡</h3>
+                            <p class="friend-label">Click para leer mi dedicatoria</p>
+                        </div>
+                    </div>
+
+                    <div class="friend-card" data-sound="click" data-name="Blanca" data-text="Te conozco desde quinto, aunque nuestra amistad se hizo más cercana en sexto y séptimo. Eres una persona muy buena y divertida, y tenemos muchísimos recuerdos juntas, tanto bonitos como vergonzosos que seguramente nunca olvidaremos. Algo que valoro muchísimo de ti es que no eres alguien que me juzga por mis errores. Si estoy haciendo algo mal, tienes la confianza de decírmelo y ayudarme a mejorar. Creo que eso es algo muy importante en una amistad: poder ser una misma y saber que la otra persona también será sincera contigo. Te quiero muchísimo.">
+                        <div class="friend-photo">
+                            <img src="assets/images/blanca.jpg" alt="Blanca" onerror="this.src='https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=400';">
+                            <div class="sparkles"></div>
+                        </div>
+                        <div class="friend-info">
+                            <h3>Blanca ♡</h3>
+                            <p class="friend-label">Click para leer mi dedicatoria</p>
+                        </div>
+                    </div>
+
+                    <!-- SET DUPLICADO para el efecto infinito -->
+                    <div class="friend-card" data-sound="click" data-name="Iker" data-text="Te quiero muchísimo y guardo con mucho cariño todas las experiencias que hemos compartido. Hemos vivido momentos muy bonitos, de esos que recuerdo con una sonrisa porque fueron tan especiales y cute a su manera. Me alegra haber coincidido contigo y haber podido compartir tantas cosas. Espero que siempre seas feliz, que te vaya increíble en todo lo que te propongas y que nunca pierdas esa parte bonita de ti. Te quiero mucho y siempre voy a recordar con cariño nuestros momentos.">
+                        <div class="friend-photo">
+                            <img src="assets/images/iker.jpg" alt="Iker" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400';">
+                            <div class="sparkles"></div>
+                        </div>
+                        <div class="friend-info">
+                            <h3>Iker ♡</h3>
+                            <p class="friend-label">Click para leer mi dedicatoria</p>
+                        </div>
+                    </div>
+
+                    <div class="friend-card" data-sound="click" data-name="Sofía" data-text="Te conozco desde segundo grado, aunque nuestra amistad empezó en quinto de primaria. Tenemos muchísimos recuerdos juntas, desde los más bonitos hasta los más graciosos. Hemos pasado por tantas cosas, incluso por varias peleas y discusiones, pero siempre hemos encontrado la manera de arreglarlas y seguir adelante. Creo que eso también demuestra lo bonita que es nuestra amistad. Me alegra muchísimo que, después de tantos años y experiencias, sigamos siendo amigas. Te quiero mucho y siempre voy a guardar con cariño todo lo que hemos vivido.">
+                        <div class="friend-photo">
+                            <img src="assets/images/sofia.jpg" alt="Sofía" onerror="this.src='https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400';">
+                            <div class="sparkles"></div>
+                        </div>
+                        <div class="friend-info">
+                            <h3>Sofía ♡</h3>
+                            <p class="friend-label">Click para leer mi dedicatoria</p>
+                        </div>
+                    </div>
+
+                    <div class="friend-card" data-sound="click" data-name="Marce" data-text="Tengo muchísimos recuerdos bonitos contigo desde sexto grado. Siempre has sido una de mis mejores amigas y no sabes cuánto te quiero. Me he divertido muchísimo a tu lado y guardo con mucho cariño todas las experiencias que hemos compartido. Eres una persona increíble, amable, linda y muy honesta. Confío muchísimo en ti y espero que nunca dejemos de ser mejores amigas. Te amo muchísimo y deseo que sigamos creando recuerdos juntas por muchos años más.">
+                        <div class="friend-photo">
+                            <img src="assets/images/marcela.jpg" alt="Marcela" onerror="this.src='https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400';">
+                            <div class="sparkles"></div>
+                        </div>
+                        <div class="friend-info">
+                            <h3>Marce ♡</h3>
+                            <p class="friend-label">Click para leer mi dedicatoria</p>
+                        </div>
+                    </div>
+
+                    <div class="friend-card" data-sound="click" data-name="Nati" data-text="Aunque te conocí recién este año, siento que conectamos muchísimo. Creo que nuestras personalidades se parecen bastante y que, de alguna manera, tu forma de ser también me ha ayudado a sentirme más libre para ser yo misma. Eres una chica muy justa, graciosa y auténtica. Me encanta que podamos compartir tantas cosas y que nuestra amistad se haya dado de una manera tan natural. Estoy muy feliz de haberte conocido y espero que sigamos compartiendo muchísimas experiencias juntas.">
+                        <div class="friend-photo">
+                            <img src="assets/images/natalia.jpg" alt="Natalia" onerror="this.src='https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400';">
+                            <div class="sparkles"></div>
+                        </div>
+                        <div class="friend-info">
+                            <h3>Nati ♡</h3>
+                            <p class="friend-label">Click para leer mi dedicatoria</p>
+                        </div>
+                    </div>
+
+                    <div class="friend-card" data-sound="click" data-name="Cris" data-text="Desde que te conocí en octavo siento que conectamos de una manera muy bonita. Recuerdo muchísimo todos los momentos en los que estuviste para mí, especialmente cuando no me sentía bien. Hemos compartido tantas conversaciones, lágrimas y risas que guardo con muchísimo cariño. Eres una chica demasiado linda, graciosa y alegre. Algo que admiro de ti es que, incluso cuando no estás pasando por tus mejores momentos, siempre tienes esa alegría tan característica de tu personalidad. Te quiero muchísimo y agradezco haberte encontrado.">
+                        <div class="friend-photo">
+                            <img src="assets/images/criss.jpg" alt="Criss" onerror="this.src='https://images.unsplash.com/photo-1524504388940-b1c3ab2b17ef?w=400';">
+                            <div class="sparkles"></div>
+                        </div>
+                        <div class="friend-info">
+                            <h3>Cris ♡</h3>
+                            <p class="friend-label">Click para leer mi dedicatoria</p>
+                        </div>
+                    </div>
+
+                    <div class="friend-card" data-sound="click" data-name="María Paz" data-text="Te conozco desde octavo y, aunque al principio no nos llevábamos precisamente bien —¡y tú lo sabes!—, me alegra muchísimo haber tenido la oportunidad de conocerte de verdad. Eres una chica muy linda, inteligente y con la que puedo contar. Me gusta que siempre estés dispuesta a ayudarme y que, cuando estoy triste, sepas darme consejos que realmente me hacen pensar. Me alegra haber cambiado aquella primera impresión y haber construido una amistad tan bonita contigo. Te quiero mucho.">
+                        <div class="friend-photo">
+                            <img src="assets/images/mariapaz.jpg" alt="Mariapaz" onerror="this.src='https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=400';">
+                            <div class="sparkles"></div>
+                        </div>
+                        <div class="friend-info">
+                            <h3>María Paz ♡</h3>
+                            <p class="friend-label">Click para leer mi dedicatoria</p>
+                        </div>
+                    </div>
+
+                    <div class="friend-card" data-sound="click" data-name="Luciana" data-text="Te conozco desde séptimo, pero siento que este año nos hemos vuelto muchísimo más cercanas. Me pareces una chica demasiado linda, alegre y graciosa. Me encanta tu personalidad porque eres auténtica, tienes una manera muy tuya de ser y no tienes miedo de mostrarte tal como eres. Me gusta mucho haber podido conocerte más y compartir tantos momentos contigo. Espero que nuestra amistad siga creciendo y que tengamos muchísimos recuerdos más.">
+                        <div class="friend-photo">
+                            <img src="assets/images/luciana.jpg" alt="Luciana" onerror="this.src='https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?w=400';">
+                            <div class="sparkles"></div>
+                        </div>
+                        <div class="friend-info">
+                            <h3>Luciana ♡</h3>
+                            <p class="friend-label">Click para leer mi dedicatoria</p>
+                        </div>
+                    </div>
+
+                    <div class="friend-card" data-sound="click" data-name="Romina" data-text="Aunque te conocí recién este año, siento que hemos conectado muchísimo. Eres una chica demasiado linda, alegre y graciosa. Te quiero mucho y agradezco que hayas estado para mí en momentos en los que no me sentía tan bien. Me gusta saber que puedo contarte mis cosas y que siempre encuentro en ti a alguien con quien puedo hablar y reírme. Me alegra muchísimo haberte conocido y espero que sigamos compartiendo muchos momentos bonitos.">
+                        <div class="friend-photo">
+                            <img src="assets/images/romina.jpg" alt="Romina" onerror="this.src='https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=400';">
+                            <div class="sparkles"></div>
+                        </div>
+                        <div class="friend-info">
+                            <h3>Romina ♡</h3>
+                            <p class="friend-label">Click para leer mi dedicatoria</p>
+                        </div>
+                    </div>
+
+                    <div class="friend-card" data-sound="click" data-name="Blanca" data-text="Te conozco desde quinto, aunque nuestra amistad se hizo más cercana en sexto y séptimo. Eres una persona muy buena y divertida, y tenemos muchísimos recuerdos juntas, tanto bonitos como vergonzosos que seguramente nunca olvidaremos. Algo que valoro muchísimo de ti es que no eres alguien que me juzga por mis errores. Si estoy haciendo algo mal, tienes la confianza de decírmelo y ayudarme a mejorar. Creo que eso es algo muy importante en una amistad: poder ser una misma y saber que la otra persona también será sincera contigo. Te quiero muchísimo.">
+                        <div class="friend-photo">
+                            <img src="assets/images/blanca.jpg" alt="Blanca" onerror="this.src='https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=400';">
+                            <div class="sparkles"></div>
+                        </div>
+                        <div class="friend-info">
+                            <h3>Blanca ♡</h3>
+                            <p class="friend-label">Click para leer mi dedicatoria</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="friends-note">
+                <p>
+                    <em>"Hay etapas y personas que, aunque formen parte del pasado, 
+                    siempre tendrán un lugar especial en mis recuerdos."</em>
+                </p>
+                <p class="friends-xoxo">XOXO</p>
+            </div>
+            <!-- Botón Flor Mágica para ir a My Dreams -->
+<div class="dreams-transition-wrapper">
+    <button id="dreamsTransitionBtn" class="dreams-page-btn">
+        <span class="page-icon">📖</span>
+        <span class="page-text">
+            <span class="page-label">Turn the page</span>
+            <span class="page-chapter">→ My Dreams</span>
+        </span>
+        <span class="page-corner"></span>
+    </button>
+</div>
+        </section>
+        
+        <!-- 
+        <!-- ============================ -->
+        <!-- SECCIÓN 7: DREAM BIG         -->
+        <!-- ============================ -->
+        <section class="section section-dreams" id="DreamBig">
+            <div class="section-number">07</div>
+            <div class="dreams-header">
+                <span class="section-tag">CHAPTER SEVEN</span>
+                <h2 class="section-title">Dream <em>big</em></h2>
+                <p class="section-intro">
+                    Mis sueños no caben en una libreta. Caben en una vida entera.
+                </p>
+            </div>
+
+            <div class="dreams-board">
+                <div class="dream-card dream-pin" style="--rotation:-4deg;" data-sound="click">
+                    <span class="dream-emoji">🇮🇹</span>
+                    <h3>Vivir en Italia</h3>
+                    <p>Una casa frente al Lago de Como. Arte, arquitectura y ese ambiente romántico.</p>
+                </div>
+                <div class="dream-card dream-pin" style="--rotation:3deg;" data-sound="click">
+                    <span class="dream-emoji">🌍</span>
+                    <h3>Viajar por el mundo</h3>
+                    <p>Conocer cada rincón que pueda.</p>
+                </div>
+                <div class="dream-card dream-pin" style="--rotation:-2deg;" data-sound="click">
+                    <span class="dream-emoji">🗽</span>
+                    <h3>Un depa en Nueva York</h3>
+                    <p>Trabajar de noche mirando las luces de la ciudad. Caminar por Central Park como en Encantada.</p>
+                </div>
+                <div class="dream-card dream-pin" style="--rotation:5deg;" data-sound="click">
+                    <span class="dream-emoji">🐴</span>
+                    <h3>Tener caballos</h3>
+                    <p>Un sueño que me acompaña desde niña.</p>
+                </div>
+                <div class="dream-card dream-pin" style="--rotation:-3deg;" data-sound="click">
+                    <span class="dream-emoji">👨‍👩‍👧‍👦</span>
+                    <h3>Formar una familia</h3>
+                    <p>Tres hijos, mucho amor y una casa llena.</p>
+                </div>
+                <div class="dream-card dream-pin" style="--rotation:2deg;" data-sound="click">
+                    <span class="dream-emoji">🏡</span>
+                    <h3>Tres casas</h3>
+                    <p>Ciudad, campo y playa. Mi propio universo.</p>
+                </div>
+                <div class="dream-card dream-pin" style="--rotation:-5deg;" data-sound="click">
+                    <span class="dream-emoji">✈️</span>
+                    <h3>Pasear a los míos</h3>
+                    <p>Llevar a mis papás y a mamá Charo a conocer el mundo.</p>
+                </div>
+                <div class="dream-card dream-pin" style="--rotation:4deg;" data-sound="click">
+                    <span class="dream-emoji">🩺</span>
+                    <h3>Ser pediatra</h3>
+                    <p>Desde pequeña siento ternura por los niños. Quiero cuidarlos y ayudarlos a crecer sanos.</p>
+                </div>
+                <div class="dream-card dream-pin" style="--rotation:-1deg;" data-sound="click">
+                    <span class="dream-emoji">💖</span>
+                    <h3>Mi organización</h3>
+                    <p>Consultas médicas gratuitas, viajes a comunidades, recaudar fondos. Que mi profesión sirva a otros.</p>
+                </div>
+                <div class="dream-card dream-pin" style="--rotation:3deg;" data-sound="click">
+                    <span class="dream-emoji">🌿</span>
+                    <h3>Ser feliz</h3>
+                    <p>Con tranquilidad, con fe, con los míos.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================ -->
+        <!-- SECCIÓN 8: A LITTLE NOTE     -->
+        <!-- ============================ -->
+        <section class="section section-note" id="note">
+            <div class="section-number">08</div>
+            <div class="note-content">
+                <span class="section-tag">FINAL CHAPTER</span>
+                <h2 class="section-title">A little <em>note</em></h2>
+                <blockquote class="note-quote">
+                    "Para mí, ser feliz significa estar bien conmigo misma, 
+                    sentir tranquilidad y disfrutar de las personas y los momentos 
+                    que forman parte de mi vida. Significa tener la oportunidad de 
+                    ayudar a los demás, aportar algo bueno al mundo y saber que estoy 
+                    construyendo una vida de la que me sienta orgullosa."
+                </blockquote>
+                <p class="note-signature">— yo, escribiendo mi propia revista.</p>
+                <p class="note-thanks">
+                    Gracias por llegar hasta aquí. Gracias por ver el mundo 
+                    a través de mis ojos, aunque sea por un ratito.
+                </p>
+                <p class="note-xoxo">XOXO</p>
+            </div>
+        </section>
+        <!-- ============================================ -->
+        <!-- SECCIÓN MANIFIESTO FINAL                     -->
+        <!-- ============================================ -->
+        <section class="section section-manifesto" id="manifesto">
+            <div class="manifesto-content">
+                <span class="manifesto-tag">MY MANIFESTO</span>
+                
+                <div class="manifesto-text">
+                    <span class="manifesto-line">Soy <strong>Alexandra</strong>.</span>
+                    <span class="manifesto-line">Nací en <em>Moyobamba</em>.</span>
+                    <span class="manifesto-line">Me mudé a Lima a los 3 años.</span>
+                    <span class="manifesto-line">Creo en los <strong>sueños grandes</strong>.</span>
+                    <span class="manifesto-line">En la <em>familia</em>.</span>
+                    <span class="manifesto-line">En la <em>amistad verdadera</em>.</span>
+                    <span class="manifesto-line">En <strong>Dios</strong>.</span>
+                    <span class="manifesto-line">En ser fiel a mí misma.</span>
+                    <span class="manifesto-line">En que la vida se vive <em>intensamente</em>.</span>
+                    <span class="manifesto-line highlight">Y esto... es solo el comienzo.</span>
+                </div>
+
+                <div class="manifesto-signature">
+                    <div class="signature-name">ALEXANDRA MONDRAGÓN</div>
+                    <div class="signature-subtitle">— the world through my eyes —</div>
+                    <div class="signature-xoxo">XOXO</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- EASTER EGG GOSSIP GIRL MODE                  -->
+        <!-- ============================================ -->
+        <div class="gossip-overlay" id="gossipOverlay">
+            <div class="gossip-logo">GOSSIP GIRL</div>
+            <p class="gossip-text">
+                <strong>Spotted:</strong> Alexandra Mondragón<br>
+                entering her <strong>villain era</strong>.<br>
+                Con sus mejores amigas, sus sueños más grandes,<br>
+                y un futuro que nadie puede escribir por ella.
+            </p>
+            <div class="gossip-signature">XOXO, Gossip Girl</div>
+        </div>
+
+        <!-- Pista sutil del easter egg -->
+        <div class="secret-hint">✦ type "GOSSIP" for a surprise ✦</div>
+        <!-- Pie de página -->
+        <footer class="site-footer">
+            <p>THE WORLD THROUGH MY EYES · ISSUE 01 · NOVEMBER 2026</p>
+            <p class="footer-small">Spotted on the web · XOXO · Made with ♥</p>
+        </footer>
+
+        <!-- ============================================ -->
+        <!-- GALERÍA NUBE DE RECUERDOS DE BEBÉ            -->
+        <!-- ============================================ -->
+        <div class="baby-gallery" id="babyGallery">
+            <div class="baby-gallery-backdrop"></div>
+            <div class="baby-gallery-content">
+                <button class="baby-gallery-close" id="closeBabyGallery">✕</button>
+                
+                <div class="baby-gallery-header">
+                    <span class="baby-gallery-tag">MEMORIES</span>
+                    <h2 class="baby-gallery-title">My <em>baby</em> days</h2>
+                    <p class="baby-gallery-subtitle">pequeños momentos que me hicieron quien soy hoy ✦</p>
+                </div>
+
+                               <div class="baby-cloud">
+                    <div class="baby-photo">
+                        <img src="assets/images/baby1.jpg" alt="Recuerdo" onerror="this.src='https://images.unsplash.com/photo-1519689680058-324335c77eba?w=400';">
+                        <span class="baby-label">01 · mi primer año</span>
+                    </div>
+                    <div class="baby-photo">
+                        <img src="assets/images/baby2.jpg" alt="Recuerdo" onerror="this.src='https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=400';">
+                        <span class="baby-label">02 · sonrisas</span>
+                    </div>
+                    <div class="baby-photo">
+                        <img src="assets/images/baby3.jpg" alt="Recuerdo" onerror="this.src='https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=400';">
+                        <span class="baby-label">03 · Moyobamba</span>
+                    </div>
+                    <div class="baby-photo">
+                        <img src="assets/images/baby4.jpg" alt="Recuerdo" onerror="this.src='https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=400';">
+                        <span class="baby-label">04 · pequeña</span>
+                    </div>
+                    <div class="baby-photo">
+                        <img src="assets/images/baby5.jpg" alt="Recuerdo" onerror="this.src='https://images.unsplash.com/photo-1504439904031-93ded9f94e4e?w=400';">
+                        <span class="baby-label">05 · recuerdos</span>
+                    </div>
+                    <div class="baby-photo">
+                        <img src="assets/images/baby6.jpg" alt="Recuerdo" onerror="this.src='https://images.unsplash.com/photo-1516627145497-66534886c574?w=400';">
+                        <span class="baby-label">06 · mi infancia</span>
+                    </div>
+                                        <div class="baby-photo">
+                        <img src="assets/images/baby7.jpg" alt="Recuerdo" onerror="this.src='https://images.unsplash.com/photo-1504173010664-32509aeebb62?w=400';">
+                        <span class="baby-label">07 · con Lluvia</span>
+                    </div>
+                    <div class="baby-photo">
+                        <img src="assets/images/baby8.jpg" alt="Recuerdo" onerror="this.src='https://images.unsplash.com/photo-1542810634-71277d95dcbb?w=400';">
+                        <span class="baby-label">08 · con Valentina</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- MODAL DE DETALLES DEL DIARIO -->
+        <div class="diary-modal" id="diaryModal">
+            <div class="diary-modal-backdrop"></div>
+            <div class="diary-modal-content">
+                <button class="diary-modal-close" id="diaryModalClose">✕</button>
+                
+                <div class="diary-modal-header">
+                    <span class="diary-modal-number" id="diaryModalNumber">Nº 01</span>
+                    <span class="diary-modal-category" id="diaryModalCategory">SERIES</span>
+                </div>
+
+                <div class="diary-modal-body">
+                    <div class="diary-modal-image">
+                        <img src="" alt="" id="diaryModalImage">
+                    </div>
+                    <div class="diary-modal-text">
+                        <h3 id="diaryModalTitle"></h3>
+                        <p id="diaryModalDescription"></p>
+                        <div class="diary-modal-extra" id="diaryModalExtra"></div>
+                    </div>
+                </div>
+
+                <div class="diary-modal-footer">
+                    <span>✦</span>
+                    <span>✦</span>
+                    <span>✦</span>
+                </div>
+            </div>
+        </div>
+    </main>
+        <!-- MODAL para mostrar las dedicatorias -->
+    <div class="dedication-modal" id="dedicationModal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">✕</button>
+            <div class="modal-decoration">✦ ✦ ✦</div>
+            <h3 class="modal-name" id="modalName"></h3>
+            <div class="modal-divider"></div>
+            <p class="modal-text" id="modalText"></p>
+            <div class="modal-footer">with love ♡</div>
+        </div>
+    </div>
+
+        <!-- ============================================ -->
+    <!-- MODAL CINEMATOGRÁFICO DEL MOOD BOARD         -->
+    <!-- ============================================ -->
+    <div class="aesthetic-modal" id="aestheticModal">
+        <!-- Flash de paparazzi -->
+        <div class="paparazzi-flash"></div>
+        
+        <!-- Fondo oscuro -->
+        <div class="aesthetic-backdrop"></div>
+        
+        <!-- Contenido -->
+        <div class="aesthetic-content">
+            <button class="aesthetic-close" id="aestheticClose">✕</button>
+            
+            <!-- Etiqueta superior -->
+            <div class="aesthetic-header">
+                <span class="aesthetic-tag" id="aestheticTag">AESTHETIC · Nº 01</span>
+                <span class="aesthetic-xoxo">XOXO</span>
+            </div>
+            
+            <!-- Imagen principal -->
+            <div class="aesthetic-image-wrapper">
+                <img src="" alt="Aesthetic" class="aesthetic-image" id="aestheticImage">
+                <div class="aesthetic-frame"></div>
+            </div>
+            
+            <!-- Navegación -->
+            <div class="aesthetic-nav">
+                <button class="aesthetic-arrow aesthetic-prev" id="aestheticPrev">←</button>
+                <span class="aesthetic-counter" id="aestheticCounter">1 / 12</span>
+                <button class="aesthetic-arrow aesthetic-next" id="aestheticNext">→</button>
+            </div>
+        </div>
+    </div>
+
+    <audio id="bgMusic" loop>
+        <source src="assets/sounds/background.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+    <!-- MODAL DE CARTA FAMILIAR -->
+<div class="family-letter-modal" id="familyLetterModal">
+    <div class="family-letter-backdrop"></div>
+    <div class="family-letter-content">
+        <button class="family-letter-close" id="familyLetterClose">✕</button>
+        <h3 id="familyLetterName" style="margin-top: 0; color: var(--color-chocolate, #333);"></h3>
+        <p id="familyLetterRole" style="font-style: italic; color: var(--color-pink, #d4758c); margin-bottom: 1.5rem;"></p>
+        <div style="width: 50px; height: 2px; background: var(--color-gold, #c9a961); margin: 0 auto 1.5rem;"></div>
+        <p id="familyLetterText" style="line-height: 1.8; color: var(--color-chocolate, #333);"></p>
+    </div>
+</div>
+<!-- MODAL CARTA MANUSCRITA FAMILIAR -->
+<div class="family-letter-modal" id="familyLetterModal">
+    <div class="family-letter-backdrop"></div>
+    <div class="family-letter-content">
+        <button class="family-letter-close" id="familyLetterClose">✕</button>
+        
+        <div class="family-letter-header">
+            <span class="family-letter-memory" id="familyLetterMemory">MEMORY Nº 01</span>
+            <span class="family-letter-wax">♡</span>
+        </div>
+
+        <div class="family-letter-body">
+            <h3 class="family-letter-name" id="familyLetterName"></h3>
+            <p class="family-letter-role" id="familyLetterRole"></p>
+            <div class="family-letter-divider"></div>
+            <p class="family-letter-text" id="familyLetterText"></p>
+            <div class="family-letter-signature">
+                <span>con todo mi amor,</span>
+                <span class="signature-name">Alexandra ♡</span>
+            </div>
+        </div>
+
+        <div class="family-letter-footer">
+            <span>✦</span>
+            <span>✦</span>
+            <span>✦</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

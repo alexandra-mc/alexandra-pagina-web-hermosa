@@ -1,0 +1,6037 @@
+/* ============================================
+   SCROLL GLOBAL SUAVE
+   ============================================ */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden; /* Evita scroll horizontal accidental */
+}
+
+/* ============================================
+   VARIABLES GLOBALES - TEMA GOSSIP GIRL / NYC
+   ============================================ */
+:root {
+    --color-cream: #f8f4ef;
+    --color-beige: #ede5d8;
+    --color-chocolate: #2a1810;
+    --color-black: #0a0a0a;
+    --color-white: #ffffff;
+    --color-pink: #d4758c;          /* rosa fucsia GG */
+    --color-pink-soft: #f3d9df;
+    --color-gold: #c9a961;
+    --color-gold-soft: #d9bf85;
+    --color-dark: #1a1a1a;
+
+    --font-display: 'Bodoni Moda', 'Playfair Display', serif;
+    --font-poetic: 'Cormorant Garamond', serif;
+    --font-body: 'Montserrat', sans-serif;
+
+    --transition-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background: var(--color-cream);
+    color: var(--color-chocolate);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+/* ============================================
+   INTRO CINEMATOGRÁFICA - NYC DARK
+   ============================================ */
+.intro {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: var(--color-black);
+}
+
+.intro-bg {
+    position: absolute;
+    inset: 0;
+    background: 
+        radial-gradient(ellipse at center, rgba(201, 169, 97, 0.2) 0%, transparent 60%),
+        radial-gradient(ellipse at 20% 80%, rgba(212, 117, 140, 0.1) 0%, transparent 50%),
+        linear-gradient(135deg, #000 0%, #1a1a1a 50%, #000 100%);
+}
+
+.vogue-word {
+    position: absolute;
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(5rem, 20vw, 18rem);
+    letter-spacing: 0.3em;
+    color: var(--color-white);
+    opacity: 0;
+    animation: vogueReveal 3.5s ease-out forwards;
+    text-align: center;
+}
+
+@keyframes vogueReveal {
+    0% {
+        opacity: 0;
+        letter-spacing: 1.5em;
+        transform: scale(0.8);
+        filter: blur(20px);
+    }
+    30% {
+        opacity: 1;
+        letter-spacing: 0.3em;
+        transform: scale(1);
+        filter: blur(0);
+    }
+    70% {
+        opacity: 1;
+        letter-spacing: 0.3em;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        letter-spacing: 0.1em;
+        transform: scale(1.3);
+        filter: blur(10px);
+    }
+}
+
+.emojis-container {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0;
+    animation: emojisAppear 1s ease-out 3s forwards;
+}
+
+@keyframes emojisAppear {
+    to { opacity: 1; }
+}
+
+.emoji {
+    position: absolute;
+    font-size: clamp(1.5rem, 3vw, 3rem);
+    animation: floatEmoji linear infinite;
+    opacity: 0;
+}
+
+@keyframes floatEmoji {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.intro-title {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: var(--color-white);
+    opacity: 0;
+    transform: translateY(30px);
+    animation: titleAppear 1.5s ease-out 4.5s forwards;
+    padding: 2rem;
+}
+
+@keyframes titleAppear {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.intro-issue {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    letter-spacing: 0.4em;
+    color: var(--color-gold);
+    margin-bottom: 2rem;
+    padding: 0.5rem 1.5rem;
+    border: 1px solid var(--color-gold);
+    text-transform: uppercase;
+}
+
+.intro-main-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 8vw, 6rem);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.5rem;
+}
+
+.intro-main-title em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--color-pink);
+}
+
+.intro-subtitle {
+    font-family: var(--font-poetic);
+    font-style: italic;
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+    color: var(--color-pink-soft);
+    margin-bottom: 3rem;
+    letter-spacing: 0.05em;
+}
+
+.intro-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem 3rem;
+    background: transparent;
+    color: var(--color-white);
+    border: 2px solid var(--color-white);
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    transition: all 0.4s var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+}
+
+.intro-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--color-pink);
+    transform: translateX(-100%);
+    transition: transform 0.4s var(--transition-smooth);
+    z-index: -1;
+}
+
+.intro-btn:hover {
+    color: var(--color-white);
+    border-color: var(--color-pink);
+}
+
+.intro-btn:hover::before {
+    transform: translateX(0);
+}
+
+.btn-arrow {
+    transition: transform 0.3s ease;
+}
+
+.intro-btn:hover .btn-arrow {
+    transform: translateX(8px);
+}
+
+.sound-toggle {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--color-white);
+    font-size: 1.2rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.sound-toggle:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+.intro.exit {
+    animation: introExit 1.2s ease-in-out forwards;
+}
+
+@keyframes introExit {
+    0% {
+        clip-path: circle(100% at 50% 50%);
+    }
+    100% {
+        clip-path: circle(0% at 50% 50%);
+        opacity: 0;
+    }
+}
+
+/* ============================================
+   CONTENIDO PRINCIPAL
+   ============================================ */
+.main-content {
+    opacity: 0;
+    transition: opacity 1s ease 0.3s;
+}
+
+.main-content.visible {
+    opacity: 1;
+}
+
+.hidden {
+    display: none;
+}
+
+.top-bar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 3rem;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--color-gold);
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--color-white);
+}
+
+.top-bar-center {
+    color: var(--color-pink);
+    font-style: italic;
+    font-family: var(--font-display);
+    font-size: 1rem;
+}
+
+/* ============================================
+   SECCIONES - ESTILOS COMUNES
+   ============================================ */
+.section {
+    padding: 8rem 3rem;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section-number {
+    position: absolute;
+    top: 3rem;
+    right: 3rem;
+    font-family: var(--font-display);
+    font-size: 6rem;
+    font-weight: 900;
+    color: rgba(42, 24, 16, 0.08);
+    line-height: 1;
+}
+
+.section-tag {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+    margin-bottom: 1.5rem;
+    padding-left: 3rem;
+    position: relative;
+}
+
+.section-tag::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 2rem;
+    height: 1px;
+    background: var(--color-gold);
+}
+
+.section-title {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 7vw, 6rem);
+    font-weight: 900;
+    line-height: 0.95;
+    color: var(--color-chocolate);
+    margin-bottom: 2rem;
+    letter-spacing: -0.02em;
+}
+
+.section-title em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--color-pink);
+}
+
+.section-intro {
+    font-family: var(--font-poetic);
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    font-style: italic;
+    max-width: 600px;
+    color: var(--color-chocolate);
+    opacity: 0.8;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s var(--transition-smooth);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ============================================
+   SECCIÓN 1: WELCOME
+   ============================================ */
+.section-welcome {
+    background: var(--color-cream);
+}
+
+.welcome-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.welcome-paragraph {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    line-height: 1.9;
+    margin-bottom: 1.5rem;
+    color: var(--color-chocolate);
+}
+
+.welcome-paragraph.italic {
+    font-family: var(--font-poetic);
+    font-style: italic;
+    font-size: 1.4rem;
+    color: var(--color-pink);
+}
+
+.polaroid {
+    background: var(--color-white);
+    padding: 1.5rem 1.5rem 4rem;
+    box-shadow: 
+        0 20px 60px rgba(42, 24, 16, 0.2),
+        0 5px 20px rgba(42, 24, 16, 0.1);
+    transform: rotate(-3deg);
+    transition: transform 0.5s var(--transition-smooth);
+    position: relative;
+}
+
+.polaroid:hover {
+    transform: rotate(0deg) scale(1.02);
+}
+
+.polaroid img {
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+}
+
+.polaroid-caption {
+    position: absolute;
+    bottom: 1rem;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-family: var(--font-poetic);
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--color-chocolate);
+    opacity: 0.7;
+}
+
+/* ============================================
+   SECCIÓN 2: WHO AM I - DOSSIER SECRETO
+   ============================================ */
+.section-whoami {
+    background: 
+        radial-gradient(ellipse at 20% 30%, rgba(212, 117, 140, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 70%, rgba(201, 169, 97, 0.08) 0%, transparent 50%),
+        linear-gradient(135deg, var(--color-cream) 0%, var(--color-beige) 100%);
+    min-height: 100vh;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+
+/* HEADER TIPO GOSSIP GIRL */
+.whoami-spotted {
+    text-align: center;
+    margin-bottom: 5rem;
+    position: relative;
+}
+
+.spotted-label {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    letter-spacing: 0.5em;
+    color: var(--color-white);
+    background: var(--color-chocolate);
+    padding: 0.5rem 1.5rem;
+    border-radius: 2px;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(42, 24, 16, 0.3);
+    animation: spottedPulse 2s ease-in-out infinite;
+}
+
+@keyframes spottedPulse {
+    0%, 100% {
+        box-shadow: 0 4px 15px rgba(42, 24, 16, 0.3);
+    }
+    50% {
+        box-shadow: 0 4px 25px rgba(212, 117, 140, 0.6);
+    }
+}
+
+.spotted-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    font-weight: 900;
+    color: var(--color-chocolate);
+    margin-bottom: 1.5rem;
+    min-height: 1.2em;
+    letter-spacing: -0.02em;
+}
+
+.spotted-title em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--color-pink);
+}
+
+/* Efecto máquina de escribir */
+.typewriter {
+    border-right: 3px solid var(--color-pink);
+    animation: typewriter 3s steps(30) 0.5s forwards, blinkCursor 0.7s step-end infinite;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.typewriter-cursor {
+    display: inline-block;
+    color: var(--color-pink);
+    font-weight: 300;
+    animation: blinkCursor 0.7s step-end infinite;
+}
+
+@keyframes typewriter {
+    to { width: 100%; }
+}
+
+@keyframes blinkCursor {
+    50% { opacity: 0; }
+}
+
+.spotted-subtitle {
+    font-family: var(--font-poetic);
+    font-style: italic;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: var(--color-chocolate);
+    opacity: 0.7;
+    max-width: 600px;
+    margin: 0 auto;
+    letter-spacing: 0.05em;
+}
+
+/* FICHA DE PERFIL TIPO EXPEDIENTE */
+.profile-card {
+    max-width: 900px;
+    margin: 0 auto 5rem;
+    background: var(--color-white);
+    border: 1px solid var(--color-gold);
+    border-radius: 4px;
+    padding: 3rem;
+    box-shadow: 
+        0 20px 60px rgba(42, 24, 16, 0.15),
+        inset 0 0 0 1px rgba(201, 169, 97, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Marca de agua tipo "CONFIDENTIAL" */
+.profile-card::before {
+    content: 'CONFIDENTIAL';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-20deg);
+    font-family: var(--font-display);
+    font-size: 8rem;
+    font-weight: 900;
+    color: var(--color-pink);
+    opacity: 0.04;
+    letter-spacing: 0.2em;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.profile-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.profile-tag {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    letter-spacing: 0.4em;
+    color: var(--color-pink);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    padding: 0.3rem 1rem;
+    border: 1px dashed var(--color-pink);
+    border-radius: 2px;
+}
+
+.profile-name {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    color: var(--color-chocolate);
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+}
+
+.profile-divider {
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+    margin: 0 auto;
+}
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.profile-item {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(201, 169, 97, 0.2);
+    transition: all 0.3s ease;
+}
+
+.profile-item:hover {
+    background: rgba(212, 117, 140, 0.05);
+    transform: translateX(5px);
+}
+
+.profile-label {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+}
+
+.profile-value {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    color: var(--color-chocolate);
+    font-style: italic;
+}
+
+/* ADJETIVOS REVELÁNDOSE */
+.traits-reveal {
+    max-width: 1000px;
+    margin: 0 auto 5rem;
+    text-align: center;
+}
+
+.traits-heading {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--color-chocolate);
+    margin-bottom: 3rem;
+    font-weight: 900;
+}
+
+.traits-heading em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--color-pink);
+}
+
+.traits-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.trait-reveal {
+    font-family: var(--font-display);
+    font-size: clamp(1rem, 2vw, 1.4rem);
+    color: var(--color-chocolate);
+    padding: 0.8rem 1.8rem;
+    background: var(--color-white);
+    border-radius: 50px;
+    box-shadow: 0 5px 20px rgba(42, 24, 16, 0.1);
+    cursor: default;
+    transition: all 0.4s var(--transition-smooth);
+    
+    /* Efecto reveal */
+    opacity: 0;
+    transform: translateY(30px) scale(0.8);
+    animation: traitReveal 0.8s ease-out forwards;
+    animation-delay: var(--delay);
+}
+
+@keyframes traitReveal {
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.trait-reveal:hover {
+    background: var(--color-chocolate);
+    color: var(--color-gold);
+    transform: translateY(-5px) scale(1.1) rotate(-2deg);
+    box-shadow: 0 15px 35px rgba(42, 24, 16, 0.3);
+}
+
+.trait-special {
+    background: var(--color-chocolate);
+    color: var(--color-gold);
+    font-style: italic;
+    font-family: var(--font-poetic);
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+}
+
+.trait-special:hover {
+    background: var(--color-gold);
+    color: var(--color-chocolate);
+}
+
+/* ============================================
+   MOOD BOARD EN FORMA DE CORAZÓN
+   ============================================ */
+.mood-board {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.mood-heading {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--color-chocolate);
+    margin-bottom: 3rem;
+    font-weight: 900;
+}
+
+.mood-heading em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--color-pink);
+}
+
+/* Contenedor del corazón */
+.heart-mood {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(6, auto);
+    gap: 0.8rem;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Cada imagen del corazón */
+.heart-img {
+    position: relative;
+    grid-column: var(--col);
+    grid-row: var(--row);
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 8px 25px rgba(42, 24, 16, 0.15);
+    cursor: pointer;
+    transition: all 0.5s var(--transition-smooth);
+    opacity: 0;
+    animation: heartImgPop 0.6s ease-out forwards;
+    animation-delay: calc(var(--col) * 0.1s + var(--row) * 0.15s);
+}
+
+@keyframes heartImgPop {
+    0% {
+        opacity: 0;
+        transform: scale(0.5) rotate(-10deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+.heart-img::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(212, 117, 140, 0.2), rgba(201, 169, 97, 0.2));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 2;
+}
+
+.heart-img::after {
+    content: '✦';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    font-size: 2rem;
+    color: var(--color-white);
+    z-index: 3;
+    transition: transform 0.4s var(--transition-smooth);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.heart-img:hover {
+    transform: scale(1.15) rotate(-3deg);
+    z-index: 10;
+    box-shadow: 0 20px 50px rgba(212, 117, 140, 0.4);
+}
+
+.heart-img:hover::before {
+    opacity: 1;
+}
+
+.heart-img:hover::after {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.heart-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s var(--transition-smooth);
+}
+
+.heart-img:hover img {
+    transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .heart-mood {
+        gap: 0.5rem;
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 500px) {
+    .heart-mood {
+        gap: 0.3rem;
+        max-width: 300px;
+    }
+}
+
+
+
+/* ============================================
+   SECCIÓN 3: LITTLE THINGS DIARY
+   ============================================ */
+.section-love {
+    background: 
+        radial-gradient(ellipse at 20% 30%, rgba(212, 117, 140, 0.05) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 70%, rgba(201, 169, 97, 0.05) 0%, transparent 50%),
+        var(--color-beige);
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+
+/* HEADER DEL DIARIO */
+.diary-header {
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.diary-tag {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    letter-spacing: 0.4em;
+    color: var(--color-gold);
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    padding: 0.5rem 1.5rem;
+    border: 1px solid var(--color-gold);
+}
+
+.diary-title {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-weight: 900;
+    color: var(--color-chocolate);
+    margin-bottom: 1.5rem;
+    line-height: 0.95;
+}
+
+.diary-title em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--color-pink);
+}
+
+.diary-subtitle {
+    font-family: var(--font-poetic);
+    font-style: italic;
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    color: var(--color-chocolate);
+    opacity: 0.7;
+    letter-spacing: 0.05em;
+    margin-bottom: 2rem;
+}
+
+.diary-decoration {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    color: var(--color-gold);
+    font-size: 1.2rem;
+}
+
+/* ============================================
+   GRID DE PÁGINAS - SOLO IMÁGENES MISTERIOSAS
+   ============================================ */
+.diary-pages {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto 5rem;
+    padding: 0 2rem;
+}
+
+/* Cada tarjeta = solo imagen tipo polaroid */
+.diary-page {
+    position: relative;
+    background: var(--color-white);
+    padding: 1.2rem 1.2rem 3rem;
+    border-radius: 4px;
+    box-shadow: 
+        0 15px 50px rgba(42, 24, 16, 0.15),
+        0 5px 20px rgba(42, 24, 16, 0.1);
+    cursor: pointer;
+    transition: all 0.5s var(--transition-smooth);
+    opacity: 0;
+    transform: translateY(40px) rotate(0deg);
+}
+
+/* Animación de entrada escalonada */
+.diary-page.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.diary-page:nth-child(1) { transition-delay: 0.1s; transform: translateY(40px) rotate(-2deg); }
+.diary-page:nth-child(2) { transition-delay: 0.2s; transform: translateY(40px) rotate(1deg); }
+.diary-page:nth-child(3) { transition-delay: 0.3s; transform: translateY(40px) rotate(-1deg); }
+.diary-page:nth-child(4) { transition-delay: 0.4s; transform: translateY(40px) rotate(2deg); }
+.diary-page:nth-child(5) { transition-delay: 0.5s; transform: translateY(40px) rotate(-1.5deg); }
+.diary-page:nth-child(6) { transition-delay: 0.6s; transform: translateY(40px) rotate(1.5deg); }
+
+.diary-page:nth-child(1).visible { transform: rotate(-2deg); }
+.diary-page:nth-child(2).visible { transform: rotate(1deg); }
+.diary-page:nth-child(3).visible { transform: rotate(-1deg); }
+.diary-page:nth-child(4).visible { transform: rotate(2deg); }
+.diary-page:nth-child(5).visible { transform: rotate(-1.5deg); }
+.diary-page:nth-child(6).visible { transform: rotate(1.5deg); }
+
+/* Hover: se endereza y se eleva */
+.diary-page:hover {
+    transform: rotate(0deg) translateY(-15px) scale(1.05) !important;
+    z-index: 10;
+    box-shadow: 
+        0 30px 70px rgba(42, 24, 16, 0.25),
+        0 10px 30px rgba(212, 117, 140, 0.2);
+}
+
+/* Esquina doblada tipo página de libro */
+.page-corner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 40px 40px 0;
+    border-color: transparent var(--color-gold) transparent transparent;
+    opacity: 0.6;
+    transition: all 0.4s ease;
+    z-index: 3;
+}
+
+.diary-page:hover .page-corner {
+    border-width: 0 60px 60px 0;
+    opacity: 1;
+    border-color: transparent var(--color-pink) transparent transparent;
+}
+
+/* Número de página */
+.page-number {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: var(--color-white);
+    background: var(--color-chocolate);
+    padding: 0.4rem 0.8rem;
+    border-radius: 2px;
+    z-index: 4;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Wrapper de la imagen */
+.page-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4 / 5;
+    border-radius: 2px;
+}
+
+.page-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s var(--transition-smooth);
+    display: block;
+}
+
+.diary-page:hover .page-image-wrapper img {
+    transform: scale(1.1);
+}
+
+/* Overlay al hacer hover */
+.page-hover-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(10, 10, 10, 0.3) 50%,
+        rgba(10, 10, 10, 0.85) 100%
+    );
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 2rem;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.diary-page:hover .page-hover-overlay {
+    opacity: 1;
+}
+
+.page-hover-text {
+    font-family: var(--font-poetic);
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--color-cream);
+    letter-spacing: 0.2em;
+    transform: translateY(10px);
+    transition: transform 0.4s ease;
+}
+
+.diary-page:hover .page-hover-text {
+    transform: translateY(0);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .diary-pages {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .diary-pages {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 0 1rem;
+    }
+}
+
+/* FOOTER DEL DIARIO */
+.diary-footer {
+    text-align: center;
+    padding: 3rem 2rem;
+    border-top: 1px solid rgba(201, 169, 97, 0.3);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.diary-footer p {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+    color: var(--color-chocolate);
+    margin-bottom: 1.5rem;
+}
+
+.diary-footer em {
+    color: var(--color-pink);
+}
+
+.diary-xoxo {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.3rem;
+    color: var(--color-pink);
+    letter-spacing: 0.4em;
+}
+
+/* ============================================
+   MODAL DE DETALLES DEL DIARIO
+   ============================================ */
+.diary-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 3000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+.diary-modal.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.diary-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(20px);
+}
+
+.diary-modal-content {
+    position: relative;
+    max-width: 900px;
+    width: 90%;
+    max-height: 85vh;
+    background: var(--color-cream);
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 30px 100px rgba(0, 0, 0, 0.6);
+    border: 1px solid var(--color-gold);
+    transform: scale(0.9);
+    transition: transform 0.5s var(--transition-smooth);
+}
+
+.diary-modal.active .diary-modal-content {
+    transform: scale(1);
+}
+
+.diary-modal-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: var(--color-chocolate);
+    color: var(--color-cream);
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.diary-modal-close:hover {
+    background: var(--color-pink);
+    transform: rotate(90deg) scale(1.1);
+}
+
+.diary-modal-header {
+    padding: 2rem 3rem 1rem;
+    border-bottom: 1px solid rgba(201, 169, 97, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.diary-modal-number {
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: var(--color-gold);
+}
+
+.diary-modal-category {
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    letter-spacing: 0.4em;
+    color: var(--color-pink);
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.diary-modal-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    padding: 3rem;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.diary-modal-image {
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(42, 24, 16, 0.2);
+}
+
+.diary-modal-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 4/5;
+}
+
+.diary-modal-text h3 {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    color: var(--color-chocolate);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.diary-modal-text p {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--color-chocolate);
+    opacity: 0.9;
+    margin-bottom: 1.5rem;
+}
+
+.diary-modal-extra {
+    font-family: var(--font-poetic);
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--color-pink);
+    padding: 1.5rem;
+    background: rgba(212, 117, 140, 0.05);
+    border-left: 3px solid var(--color-pink);
+    border-radius: 4px;
+}
+
+.diary-modal-footer {
+    padding: 1.5rem 3rem;
+    border-top: 1px solid rgba(201, 169, 97, 0.3);
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    color: var(--color-gold);
+    font-size: 1rem;
+}
+
+/* Scrollbar personalizado */
+.diary-modal-body::-webkit-scrollbar {
+    width: 6px;
+}
+
+.diary-modal-body::-webkit-scrollbar-track {
+    background: var(--color-beige);
+}
+
+.diary-modal-body::-webkit-scrollbar-thumb {
+    background: var(--color-pink);
+    border-radius: 3px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .diary-pages {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .page-content {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+    
+    .page-image {
+        height: 250px;
+    }
+    
+    .diary-modal-body {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .page-text {
+        padding: 2rem 1.5rem;
+    }
+    
+    .diary-modal-body {
+        padding: 2rem 1.5rem;
+    }
+}
+
+/* ============================================
+   SECCIÓN 4: MY TALENTS - COLECCIÓN EXCLUSIVA
+   ============================================ */
+.section-talents {
+    background: 
+        radial-gradient(ellipse at 20% 30%, rgba(201, 169, 97, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 70%, rgba(212, 117, 140, 0.08) 0%, transparent 50%),
+        linear-gradient(135deg, #1a0f08 0%, #2a1810 50%, #1a0f08 100%);
+    color: var(--color-cream);
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Patrón de fondo sutil tipo vitrina de museo */
+.section-talents::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+        radial-gradient(1px 1px at 10% 20%, rgba(201, 169, 97, 0.3), transparent),
+        radial-gradient(1px 1px at 80% 40%, rgba(212, 117, 140, 0.3), transparent),
+        radial-gradient(1px 1px at 30% 70%, rgba(201, 169, 97, 0.3), transparent),
+        radial-gradient(1px 1px at 60% 90%, rgba(212, 117, 140, 0.3), transparent),
+        radial-gradient(1px 1px at 90% 10%, rgba(201, 169, 97, 0.3), transparent);
+    background-size: 300px 300px;
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.section-talents .section-number {
+    color: rgba(250, 246, 240, 0.05);
+}
+
+/* HEADER DE LA COLECCIÓN */
+.collection-header {
+    text-align: center;
+    margin-bottom: 5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.collection-tag {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    letter-spacing: 0.4em;
+    color: var(--color-gold);
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    padding: 0.5rem 1.5rem;
+    border: 1px solid var(--color-gold);
+}
+
+.collection-title {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-weight: 900;
+    color: var(--color-cream);
+    margin-bottom: 1.5rem;
+    line-height: 0.95;
+}
+
+.collection-title em {
+    font-style: italic;
+    font-weight: 400;
+    background: linear-gradient(90deg, var(--color-gold), var(--color-pink), var(--color-gold));
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 3s linear infinite;
+}
+
+.collection-subtitle {
+    font-family: var(--font-poetic);
+    font-style: italic;
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    color: var(--color-cream);
+    opacity: 0.7;
+    letter-spacing: 0.05em;
+    margin-bottom: 3rem;
+}
+
+/* Estadísticas de la colección */
+.collection-stats {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.stat-number {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 900;
+    color: var(--color-gold);
+    line-height: 1;
+}
+
+.stat-label {
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    color: var(--color-cream);
+    opacity: 0.6;
+    text-transform: uppercase;
+}
+
+/* ============================================
+   VITRINA DE TARJETAS COLECCIONABLES
+   ============================================ */
+.talent-vitrine {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2.5rem;
+    max-width: 1400px;
+    margin: 0 auto 5rem;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* CADA TARJETA COLECCIONABLE */
+.talent-card {
+    position: relative;
+    aspect-ratio: 3 / 4;
+    background: linear-gradient(135deg, #2a1810 0%, #3d2817 50%, #2a1810 100%);
+    border: 2px solid var(--color-gold);
+    border-radius: 12px;
+    padding: 2rem 1.5rem;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.5s var(--transition-smooth);
+    box-shadow: 
+        0 15px 50px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(201, 169, 97, 0.2),
+        inset 0 0 30px rgba(201, 169, 97, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Brillo dorado que se mueve */
+.card-shine {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent 30%,
+        rgba(201, 169, 97, 0.15) 50%,
+        transparent 70%
+    );
+    transform: rotate(45deg) translateY(-100%);
+    transition: transform 1s ease;
+    pointer-events: none;
+}
+
+.talent-card:hover .card-shine {
+    transform: rotate(45deg) translateY(100%);
+}
+
+/* Rareza (LEGENDARY, EPIC, RARE) */
+.card-rarity {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    font-family: var(--font-body);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    color: var(--color-gold);
+    text-transform: uppercase;
+    padding: 0.3rem 0.8rem;
+    background: rgba(201, 169, 97, 0.1);
+    border: 1px solid var(--color-gold);
+    border-radius: 2px;
+    z-index: 3;
+}
+
+/* Número de edición */
+.card-edition {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--color-cream);
+    opacity: 0.6;
+    z-index: 3;
+}
+
+/* Contenido de la tarjeta */
+.card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    text-align: center;
+    gap: 1.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.card-icon {
+    font-size: clamp(3rem, 6vw, 4.5rem);
+    filter: drop-shadow(0 4px 15px rgba(201, 169, 97, 0.5));
+    transition: transform 0.5s var(--transition-smooth);
+}
+
+.talent-card:hover .card-icon {
+    transform: scale(1.15) rotate(-5deg);
+}
+
+.card-name {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 900;
+    color: var(--color-cream);
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+}
+
+.card-name em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--color-gold);
+}
+
+.card-description {
+    font-family: var(--font-poetic);
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--color-cream);
+    opacity: 0.8;
+    line-height: 1.5;
+    max-width: 220px;
+}
+
+/* Footer con CTA */
+.card-footer {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.card-cta {
+    font-family: var(--font-poetic);
+    font-style: italic;
+    font-size: 0.8rem;
+    color: var(--color-gold);
+    letter-spacing: 0.2em;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.4s ease;
+}
+
+.talent-card:hover .card-cta {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* HOVER: tarjeta se eleva y brilla */
+.talent-card:hover {
+    transform: translateY(-15px) scale(1.03);
+    border-color: var(--color-pink);
+    box-shadow: 
+        0 25px 70px rgba(0, 0, 0, 0.6),
+        0 0 40px rgba(212, 117, 140, 0.4),
+        inset 0 0 40px rgba(212, 117, 140, 0.1);
+}
+
+/* Footer de la colección */
+.collection-footer {
+    text-align: center;
+    padding: 3rem 2rem;
+    border-top: 1px solid rgba(201, 169, 97, 0.3);
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.collection-footer p {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+    color: var(--color-cream);
+    margin-bottom: 1.5rem;
+}
+
+.collection-footer em {
+    color: var(--color-gold);
+}
+
+.collection-xoxo {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.3rem;
+    color: var(--color-pink);
+    letter-spacing: 0.4em;
+}
+
+/* ============================================
+   MODAL DE DETALLES DEL TALENTO
+   ============================================ */
+.talent-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 3000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+.talent-modal.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.talent-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 5, 0, 0.95);
+    backdrop-filter: blur(20px);
+}
+
+.talent-modal-content {
+    position: relative;
+    max-width: 600px;
+    width: 90%;
+    background: linear-gradient(135deg, #2a1810 0%, #3d2817 100%);
+    border: 2px solid var(--color-gold);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 
+        0 30px 100px rgba(0, 0, 0, 0.8),
+        0 0 60px rgba(201, 169, 97, 0.3);
+    transform: scale(0.8) rotate(-5deg);
+    transition: transform 0.6s var(--transition-smooth);
+    padding: 3rem 2.5rem;
+    text-align: center;
+}
+
+.talent-modal.active .talent-modal-content {
+    transform: scale(1) rotate(0deg);
+}
+
+.talent-modal-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: transparent;
+    border: 2px solid var(--color-gold);
+    color: var(--color-gold);
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.talent-modal-close:hover {
+    background: var(--color-gold);
+    color: var(--color-chocolate);
+    transform: rotate(90deg) scale(1.1);
+}
+
+.talent-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(201, 169, 97, 0.3);
+}
+
+.talent-modal-rarity {
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    color: var(--color-gold);
+    text-transform: uppercase;
+    padding: 0.3rem 0.8rem;
+    border: 1px solid var(--color-gold);
+    border-radius: 2px;
+}
+
+.talent-modal-edition {
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--color-cream);
+    opacity: 0.7;
+}
+
+.talent-modal-body {
+    padding: 1rem 0;
+}
+
+.talent-modal-icon {
+    font-size: 5rem;
+    margin-bottom: 1.5rem;
+    filter: drop-shadow(0 8px 20px rgba(201, 169, 97, 0.5));
+    animation: iconPulse 2s ease-in-out infinite;
+}
+
+@keyframes iconPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.talent-modal-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    color: var(--color-cream);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    font-weight: 900;
+}
+
+.talent-modal-description {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--color-cream);
+    opacity: 0.9;
+    margin-bottom: 2rem;
+}
+
+.talent-modal-quote {
+    font-family: var(--font-poetic);
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--color-gold);
+    padding: 1.5rem;
+    background: rgba(201, 169, 97, 0.05);
+    border-left: 3px solid var(--color-gold);
+    border-radius: 4px;
+    text-align: left;
+    line-height: 1.6;
+}
+
+.talent-modal-footer {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(201, 169, 97, 0.3);
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    color: var(--color-gold);
+    font-size: 1rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .talent-vitrine {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .collection-stats {
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .talent-vitrine {
+        grid-template-columns: 1fr;
+        max-width: 320px;
+        margin: 0 auto 5rem;
+    }
+    
+    .talent-modal-content {
+        padding: 2rem 1.5rem;
+    }
+}
+/* ============================================
+   SECCIÓN 5: MY FAMILY - GALERÍA DE RETRATOS
+   ============================================ */
+.section-family {
+    background: 
+        radial-gradient(ellipse at 20% 30%, rgba(212, 117, 140, 0.06) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 70%, rgba(201, 169, 97, 0.06) 0%, transparent 50%),
+        linear-gradient(180deg, var(--color-cream) 0%, var(--color-beige) 100%);
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    position: relative;
+}
+
+/* HEADER DE LA GALERÍA */
+.family-gallery-header {
+    text-align: center;
+    margin-bottom: 5rem;
+    padding: 0 2rem;
+}
+
+.family-gallery-tag {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    letter-spacing: 0.4em;
+    color: var(--color-gold);
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    padding: 0.5rem 1.5rem;
+    border: 1px solid var(--color-gold);
+}
+
+.family-gallery-title {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-weight: 900;
+    color: var(--color-chocolate);
+    margin-bottom: 1.5rem;
+    line-height: 0.95;
+}
+
+.family-gallery-title em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--color-pink);
+}
+
+.family-gallery-subtitle {
+    font-family: var(--font-poetic);
+    font-style: italic;
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    color: var(--color-chocolate);
+    opacity: 0.7;
+    letter-spacing: 0.05em;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+.family-gallery-line {
+    width: 1px;
+    height: 80px;
+    background: linear-gradient(180deg, var(--color-gold), transparent);
+    margin: 0 auto;
+}
+
+/* ============================================
+   GALERÍA DE RETRATOS FAMILIARES
+   ============================================ */
+.family-portrait-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto 5rem;
+    padding: 0 2rem;
+}
+
+/* CADA RETRATO */
+.family-portrait {
+    position: relative;
+    cursor: pointer;
+    transition: all 0.6s var(--transition-smooth);
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.family-portrait.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Marco dorado con esquinas ornamentales */
+.portrait-frame {
+    position: relative;
+    background: var(--color-white);
+    padding: 1.5rem;
+    box-shadow: 
+        0 20px 60px rgba(42, 24, 16, 0.15),
+        0 0 0 1px rgba(201, 169, 97, 0.2);
+    transition: all 0.5s var(--transition-smooth);
+}
+
+.portrait-frame::before {
+    content: '';
+    position: absolute;
+    inset: 8px;
+    border: 1px solid var(--color-gold);
+    pointer-events: none;
+    opacity: 0.5;
+    transition: opacity 0.4s ease;
+}
+
+.family-portrait:hover .portrait-frame::before {
+    opacity: 1;
+}
+
+/* Esquinas ornamentales del marco */
+.portrait-corner {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--color-gold);
+    transition: all 0.4s ease;
+    z-index: 3;
+}
+
+.portrait-corner.tl { top: 10px; left: 10px; border-right: none; border-bottom: none; }
+.portrait-corner.tr { top: 10px; right: 10px; border-left: none; border-bottom: none; }
+.portrait-corner.bl { bottom: 10px; left: 10px; border-right: none; border-top: none; }
+.portrait-corner.br { bottom: 10px; right: 10px; border-left: none; border-top: none; }
+
+.family-portrait:hover .portrait-corner {
+    width: 30px;
+    height: 30px;
+    border-color: var(--color-pink);
+}
+
+/* Imagen del retrato */
+.portrait-image {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4 / 5;
+}
+
+.portrait-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s var(--transition-smooth);
+    filter: sepia(0.1) contrast(1.05);
+}
+
+.family-portrait:hover .portrait-image img {
+    transform: scale(1.08);
+    filter: sepia(0) contrast(1.1);
+}
+
+/* Brillo dorado sobre la imagen */
+.portrait-shine {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        transparent 0%,
+        rgba(201, 169, 97, 0.2) 50%,
+        transparent 100%
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.family-portrait:hover .portrait-shine {
+    opacity: 1;
+}
+
+/* Información del retrato */
+.portrait-info {
+    padding: 1.5rem 0.5rem 0.5rem;
+    text-align: center;
+}
+
+.portrait-memory {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    color: var(--color-gold);
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+}
+
+.portrait-name {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    color: var(--color-chocolate);
+    margin-bottom: 0.3rem;
+    font-weight: 900;
+}
+
+.portrait-role {
+    font-family: var(--font-poetic);
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--color-chocolate);
+    opacity: 0.7;
+    margin-bottom: 1rem;
+}
+
+.portrait-cta {
+    display: inline-block;
+    font-family: var(--font-poetic);
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--color-gold);
+    letter-spacing: 0.1em;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.4s ease;
+}
+
+.family-portrait:hover .portrait-cta {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* HOVER: retrato se eleva */
+.family-portrait:hover {
+    transform: translateY(-15px);
+}
+
+.family-portrait:hover .portrait-frame {
+    box-shadow: 
+        0 30px 80px rgba(42, 24, 16, 0.25),
+        0 0 0 1px var(--color-gold),
+        0 0 40px rgba(212, 117, 140, 0.2);
+}
+
+/* ============================================
+   FRASE DE FE
+   ============================================ */
+.family-faith-quote {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    border-top: 1px solid rgba(201, 169, 97, 0.3);
+    border-bottom: 1px solid rgba(201, 169, 97, 0.3);
+    text-align: center;
+}
+
+.faith-decoration {
+    font-size: 1.5rem;
+    color: var(--color-gold);
+    flex-shrink: 0;
+}
+
+.family-faith-quote p {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+    color: var(--color-chocolate);
+    line-height: 1.6;
+}
+
+.family-faith-quote em {
+    color: var(--color-gold);
+    font-weight: 700;
+}
+
+/* ============================================
+   MODAL CARTA MANUSCRITA
+   ============================================ */
+.family-letter-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 3000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+.family-letter-modal.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.family-letter-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(20px);
+}
+
+.family-letter-content {
+    position: relative;
+    max-width: 700px;
+    width: 90%;
+    max-height: 85vh;
+    background: 
+        linear-gradient(135deg, #fdfbf7 0%, #f5efe6 100%);
+    border-radius: 4px;
+    overflow-y: auto;
+    box-shadow: 
+        0 30px 100px rgba(0, 0, 0, 0.6),
+        0 0 60px rgba(201, 169, 97, 0.3);
+    border: 2px solid var(--color-gold);
+    transform: scale(0.9) rotate(-2deg);
+    transition: transform 0.6s var(--transition-smooth);
+    padding: 3rem 2.5rem;
+}
+
+.family-letter-modal.active .family-letter-content {
+    transform: scale(1) rotate(0deg);
+}
+
+.family-letter-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: var(--color-chocolate);
+    color: var(--color-cream);
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.family-letter-close:hover {
+    background: var(--color-pink);
+    transform: rotate(90deg) scale(1.1);
+}
+
+.family-letter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(201, 169, 97, 0.3);
+}
+
+.family-letter-memory {
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    color: var(--color-gold);
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.family-letter-wax {
+    font-size: 2rem;
+    color: var(--color-pink);
+    filter: drop-shadow(0 2px 4px rgba(212, 117, 140, 0.4));
+}
+
+.family-letter-body {
+    padding: 1rem 0;
+}
+
+.family-letter-name {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--color-chocolate);
+    margin-bottom: 0.5rem;
+    font-weight: 900;
+    text-align: center;
+}
+
+.family-letter-role {
+    font-family: var(--font-poetic);
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--color-pink);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.family-letter-divider {
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+    margin: 0 auto 2rem;
+}
+
+.family-letter-text {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: var(--color-chocolate);
+    text-align: justify;
+    margin-bottom: 3rem;
+}
+
+.family-letter-signature {
+    text-align: right;
+    font-family: var(--font-poetic);
+    font-style: italic;
+    color: var(--color-chocolate);
+    opacity: 0.8;
+}
+
+.family-letter-signature .signature-name {
+    display: block;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.5rem;
+    color: var(--color-pink);
+    margin-top: 0.5rem;
+    font-weight: 700;
+}
+
+.family-letter-footer {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(201, 169, 97, 0.3);
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    color: var(--color-gold);
+    font-size: 1rem;
+}
+
+/* Scrollbar personalizado */
+.family-letter-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.family-letter-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.family-letter-content::-webkit-scrollbar-thumb {
+    background: var(--color-pink);
+    border-radius: 3px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .family-portrait-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .family-portrait-gallery {
+        grid-template-columns: 1fr;
+        max-width: 320px;
+        margin: 0 auto 5rem;
+    }
+    
+    .family-letter-content {
+        padding: 2rem 1.5rem;
+    }
+    
+    .family-faith-quote {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+/* ============================================
+   SECCIÓN 6: MY FRIENDS - CARRUSEL INFINITO
+   ============================================ */
+.section-friends {
+    background: linear-gradient(135deg, var(--color-cream) 0%, var(--color-beige) 100%);
+    overflow: hidden;
+}
+
+.friends-header {
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.friends-header .section-tag {
+    padding-left: 0;
+}
+
+.friends-header .section-tag::before {
+    display: none;
+}
+
+/* CONTENEDOR DEL CARRUSEL */
+.friends-carousel {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 2rem 0;
+    margin-bottom: 4rem;
+    /* Efecto fade en los bordes */
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+
+/* TRACK QUE SE MUEVE */
+.friends-track {
+    display: flex;
+    gap: 2rem;
+    width: max-content;
+    animation: scrollFriends 40s linear infinite;
+}
+
+/* PAUSA AL PASAR EL MOUSE */
+.friends-carousel:hover .friends-track {
+    animation-play-state: paused;
+}
+
+/* ANIMACIÓN PRINCIPAL - movimiento hacia la izquierda */
+@keyframes scrollFriends {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* TARJETAS DE AMIGAS */
+.friend-card {
+    flex-shrink: 0;
+    width: 280px;
+    background: var(--color-white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(42, 24, 16, 0.1);
+    transition: all 0.5s var(--transition-smooth);
+    cursor: pointer;
+    position: relative;
+}
+
+.friend-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-pink), var(--color-gold));
+    transform: scaleX(0);
+    transition: transform 0.4s var(--transition-smooth);
+    z-index: 2;
+}
+
+.friend-card:hover::before {
+    transform: scaleX(1);
+}
+
+.friend-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 25px 60px rgba(42, 24, 16, 0.25);
+    z-index: 10;
+}
+
+.friend-photo {
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+    position: relative;
+}
+
+.friend-photo::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 60%, rgba(0, 0, 0, 0.3) 100%);
+}
+
+.friend-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s var(--transition-smooth);
+}
+
+.friend-card:hover .friend-photo img {
+    transform: scale(1.1);
+}
+
+.friend-info {
+    padding: 1.5rem 2rem 2rem;
+}
+
+.friend-info h3 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--color-chocolate);
+    margin-bottom: 0.3rem;
+}
+
+.friend-label {
+    font-family: var(--font-poetic);
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--color-pink);
+    margin-bottom: 0.8rem;
+    letter-spacing: 0.05em;
+}
+
+.friend-text {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: var(--color-chocolate);
+    opacity: 0.8;
+}
+
+/* NOTA FINAL */
+.friends-note {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 3rem;
+    background: var(--color-chocolate);
+    color: var(--color-cream);
+    border-radius: 8px;
+    box-shadow: 0 15px 40px rgba(42, 24, 16, 0.2);
+}
+
+.friends-note p {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+    color: var(--color-cream);
+    line-height: 1.6;
+}
+
+.friends-note em {
+    color: var(--color-gold);
+}
+
+.friends-xoxo {
+    margin-top: 1.5rem;
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--color-pink);
+    letter-spacing: 0.3em;
+    font-style: italic;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .friend-card {
+        width: 240px;
+    }
+    
+    .friend-photo {
+        height: 280px;
+    }
+}
+
+@media (max-width: 500px) {
+    .friend-card {
+        width: 200px;
+    }
+    
+    .friend-photo {
+        height: 240px;
+    }
+    
+    .friends-track {
+        gap: 1rem;
+    }
+}
+
+/* ============================================
+   SECCIÓN 7: DREAM BIG
+   ============================================ */
+.section-dreams {
+    background: 
+        radial-gradient(circle at 20% 30%, rgba(212, 117, 140, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(201, 169, 97, 0.1) 0%, transparent 50%),
+        var(--color-cream);
+}
+
+.dreams-header {
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.dreams-header .section-tag {
+    padding-left: 0;
+}
+
+.dreams-header .section-tag::before {
+    display: none;
+}
+
+.dreams-board {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.dream-card {
+    background: var(--color-white);
+    padding: 2rem;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(42, 24, 16, 0.1);
+    transform: rotate(var(--rotation));
+    transition: all 0.4s var(--transition-smooth);
+    cursor: pointer;
+    position: relative;
+}
+
+.dream-card::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 16px;
+    height: 16px;
+    background: var(--color-pink);
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.dream-card:hover {
+    transform: rotate(0deg) translateY(-10px) scale(1.05);
+    box-shadow: 0 25px 60px rgba(42, 24, 16, 0.2);
+    z-index: 10;
+}
+
+.dream-emoji {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.dream-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    color: var(--color-chocolate);
+    margin-bottom: 0.5rem;
+}
+
+.dream-card p {
+    font-family: var(--font-poetic);
+    font-style: italic;
+    color: var(--color-chocolate);
+    opacity: 0.8;
+}
+
+/* ============================================
+   SECCIÓN 8: A LITTLE NOTE
+   ============================================ */
+.section-note {
+    background: var(--color-black);
+    color: var(--color-cream);
+    text-align: center;
+    min-height: 100vh;
+}
+
+.section-note .section-number {
+    color: rgba(250, 246, 240, 0.05);
+}
+
+.section-note .section-title {
+    color: var(--color-cream);
+}
+
+.section-note .section-title em {
+    color: var(--color-pink);
+}
+
+.section-note .section-tag {
+    color: var(--color-gold);
+}
+
+.section-note .section-tag::before {
+    background: var(--color-gold);
+}
+
+.note-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.note-quote {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    line-height: 1.5;
+    color: var(--color-cream);
+    margin: 3rem 0;
+    padding: 2rem;
+    border-top: 1px solid var(--color-pink);
+    border-bottom: 1px solid var(--color-pink);
+}
+
+.note-signature {
+    font-family: var(--font-poetic);
+    font-style: italic;
+    font-size: 1.3rem;
+    color: var(--color-gold);
+    margin-bottom: 3rem;
+}
+
+.note-thanks {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.8;
+    opacity: 0.7;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.note-xoxo {
+    margin-top: 3rem;
+    font-family: var(--font-display);
+    font-size: 2rem;
+    color: var(--color-pink);
+    letter-spacing: 0.5em;
+    font-style: italic;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.site-footer {
+    background: var(--color-chocolate);
+    color: var(--color-cream);
+    text-align: center;
+    padding: 3rem 2rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    border-top: 2px solid var(--color-gold);
+}
+
+.footer-small {
+    margin-top: 1rem;
+    font-size: 0.7rem;
+    opacity: 0.6;
+    letter-spacing: 0.2em;
+    font-style: italic;
+    font-family: var(--font-poetic);
+}
+/* ============================================
+   WILD CARD - TARJETA ESPECIAL
+   ============================================ */
+
+/* La wild card es más brillante y misteriosa */
+.wild-card {
+    background: linear-gradient(135deg, #1a0f08 0%, #2a1810 50%, #1a0f08 100%);
+    border: 3px solid transparent;
+    background-clip: padding-box;
+    position: relative;
+    overflow: visible;
+}
+
+/* Borde dorado animado con gradiente */
+.wild-card::before {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    background: linear-gradient(
+        45deg,
+        var(--color-gold),
+        var(--color-pink),
+        var(--color-gold),
+        var(--color-pink),
+        var(--color-gold)
+    );
+    background-size: 400% 400%;
+    border-radius: 12px;
+    z-index: -1;
+    animation: wildCardBorder 3s linear infinite;
+}
+
+@keyframes wildCardBorder {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Brillo extra más intenso */
+.wild-card .card-shine {
+    background: linear-gradient(
+        45deg,
+        transparent 30%,
+        rgba(201, 169, 97, 0.3) 50%,
+        transparent 70%
+    );
+}
+
+/* Aura brillante alrededor de la tarjeta */
+.wild-card-glow {
+    position: absolute;
+    inset: -20px;
+    background: radial-gradient(
+        circle at center,
+        rgba(201, 169, 97, 0.3) 0%,
+        transparent 70%
+    );
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+    z-index: -2;
+}
+
+.wild-card:hover .wild-card-glow {
+    opacity: 1;
+    animation: wildCardPulse 2s ease-in-out infinite;
+}
+
+@keyframes wildCardPulse {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+/* Icono especial con animación de rotación */
+.wild-icon {
+    animation: wildIconSpin 4s linear infinite;
+    filter: drop-shadow(0 0 20px rgba(201, 169, 97, 0.8));
+}
+
+@keyframes wildIconSpin {
+    0% { transform: rotate(0deg) scale(1); }
+    25% { transform: rotate(90deg) scale(1.1); }
+    50% { transform: rotate(180deg) scale(1); }
+    75% { transform: rotate(270deg) scale(1.1); }
+    100% { transform: rotate(360deg) scale(1); }
+}
+
+/* Hover más espectacular */
+.wild-card:hover {
+    transform: translateY(-20px) scale(1.08) !important;
+    box-shadow: 
+        0 30px 80px rgba(0, 0, 0, 0.7),
+        0 0 60px rgba(201, 169, 97, 0.6),
+        0 0 100px rgba(212, 117, 140, 0.4);
+}
+
+.wild-card:hover .card-icon {
+    animation: wildIconSpinFast 1s linear infinite;
+}
+
+@keyframes wildIconSpinFast {
+    to { transform: rotate(360deg); }
+}
+
+/* Etiqueta "WILD" en rosa */
+.wild-card .card-rarity {
+    color: var(--color-pink);
+    border-color: var(--color-pink);
+    background: rgba(212, 117, 140, 0.1);
+}
+
+/* Partículas especiales al hacer click */
+.wild-particle {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    animation: wildParticleExplode 1.5s ease-out forwards;
+}
+
+.wild-particle.gold {
+    background: var(--color-gold);
+    box-shadow: 0 0 15px rgba(201, 169, 97, 1);
+}
+
+.wild-particle.pink {
+    background: var(--color-pink);
+    box-shadow: 0 0 15px rgba(212, 117, 140, 1);
+}
+
+@keyframes wildParticleExplode {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(calc(-50% + var(--px)), calc(-50% + var(--py))) scale(2);
+        opacity: 0;
+    }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .wild-card {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 500px) {
+    .wild-card {
+        grid-column: span 1;
+    }
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 900px) {
+    .section {
+        padding: 5rem 1.5rem;
+    }
+
+    .top-bar {
+        padding: 1rem 1.5rem;
+        font-size: 0.6rem;
+    }
+
+    .top-bar-center {
+        display: none;
+    }
+
+    .section-number {
+        font-size: 4rem;
+        top: 1.5rem;
+        right: 1.5rem;
+    }
+
+    .welcome-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .love-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 180px;
+    }
+
+    .card-wide {
+        grid-column: span 2;
+    }
+
+    .talents-layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .family-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+    }
+
+    .friends-mosaic {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .traits-cloud {
+        height: 600px;
+    }
+}
+
+@media (max-width: 500px) {
+    .love-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card-wide {
+        grid-column: span 1;
+    }
+
+    .family-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .friends-mosaic {
+        grid-template-columns: 1fr;
+    }
+
+    .intro-issue {
+        font-size: 0.6rem;
+        letter-spacing: 0.2em;
+    }
+}
+/* ============================================
+   LUCECITAS BRILLANTES (SPARKLES)
+   ============================================ */
+.sparkles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 3;
+    overflow: hidden;
+}
+
+.sparkles::before,
+.sparkles::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-gold);
+    box-shadow: 
+        20px 30px 0 var(--color-gold),
+        80px 50px 0 var(--color-pink),
+        150px 20px 0 var(--color-gold),
+        200px 80px 0 var(--color-pink),
+        50px 150px 0 var(--color-gold),
+        120px 200px 0 var(--color-pink),
+        180px 250px 0 var(--color-gold),
+        30px 280px 0 var(--color-pink),
+        220px 150px 0 var(--color-gold),
+        100px 100px 0 var(--color-pink);
+    animation: sparkleFloat 4s ease-in-out infinite;
+    opacity: 0;
+}
+
+.sparkles::after {
+    animation-delay: 2s;
+    background: var(--color-pink);
+    box-shadow: 
+        40px 60px 0 var(--color-pink),
+        100px 30px 0 var(--color-gold),
+        170px 90px 0 var(--color-pink),
+        230px 40px 0 var(--color-gold),
+        70px 180px 0 var(--color-pink),
+        140px 230px 0 var(--color-gold),
+        200px 180px 0 var(--color-pink),
+        50px 250px 0 var(--color-gold),
+        250px 120px 0 var(--color-pink),
+        130px 70px 0 var(--color-gold);
+}
+
+.friend-card:hover .sparkles::before,
+.friend-card:hover .sparkles::after,
+.family-card:hover .sparkles::before,
+.family-card:hover .sparkles::after {
+    opacity: 1;
+}
+
+@keyframes sparkleFloat {
+    0%, 100% {
+        opacity: 0;
+        transform: translateY(0) scale(0.5);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(-10px) scale(1);
+    }
+}
+
+/* ============================================
+   MARIPOSAS VOLANDO
+   ============================================ */
+.butterflies-container {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.butterfly {
+    position: absolute;
+    font-size: 1.8rem;
+    opacity: 0;
+    animation: butterflyFly linear infinite;
+    filter: drop-shadow(0 2px 4px rgba(212, 117, 140, 0.4));
+}
+
+@keyframes butterflyFly {
+    0% {
+        transform: translate(0, 0) rotate(0deg) scale(1);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.9;
+    }
+    25% {
+        transform: translate(100px, -150px) rotate(15deg) scale(1.1);
+    }
+    50% {
+        transform: translate(250px, -50px) rotate(-10deg) scale(0.9);
+        opacity: 1;
+    }
+    75% {
+        transform: translate(400px, -200px) rotate(20deg) scale(1.05);
+    }
+    90% {
+        opacity: 0.9;
+    }
+    100% {
+        transform: translate(600px, -100px) rotate(0deg) scale(1);
+        opacity: 0;
+    }
+}
+
+/* Asegurar que el contenido esté por encima de las mariposas */
+.friends-header,
+.friends-carousel,
+.friends-note {
+    position: relative;
+    z-index: 2;
+}
+
+/* ============================================
+   MODAL DE DEDICATORIAS
+   ============================================ */
+.dedication-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+.dedication-modal.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 10, 10, 0.85);
+    backdrop-filter: blur(10px);
+}
+
+.modal-content {
+    position: relative;
+    background: var(--color-cream);
+    max-width: 600px;
+    width: 90%;
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 4rem 3rem 3rem;
+    border-radius: 4px;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+    transform: scale(0.9) translateY(20px);
+    transition: transform 0.5s var(--transition-smooth);
+    text-align: center;
+    border: 1px solid var(--color-gold);
+}
+
+.dedication-modal.active .modal-content {
+    transform: scale(1) translateY(0);
+}
+
+.modal-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--color-chocolate);
+    color: var(--color-cream);
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.modal-close:hover {
+    background: var(--color-pink);
+    transform: rotate(90deg);
+}
+
+.modal-decoration {
+    font-size: 1.5rem;
+    color: var(--color-gold);
+    letter-spacing: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.modal-name {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--color-chocolate);
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.modal-divider {
+    width: 60px;
+    height: 2px;
+    background: var(--color-pink);
+    margin: 0 auto 2rem;
+}
+
+.modal-text {
+    font-family: var(--font-poetic);
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    line-height: 1.9;
+    color: var(--color-chocolate);
+    text-align: left;
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+.modal-footer {
+    font-family: var(--font-display);
+    font-style: italic;
+    color: var(--color-pink);
+    letter-spacing: 0.2em;
+    font-size: 0.9rem;
+}
+
+/* Scrollbar personalizado en el modal */
+.modal-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+    background: var(--color-beige);
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background: var(--color-pink);
+    border-radius: 3px;
+}
+
+/* ============================================
+   AJUSTES A TARJETAS EXISTENTES
+   ============================================ */
+.family-preview {
+    font-family: var(--font-poetic);
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--color-pink);
+    margin-top: 0.8rem;
+    letter-spacing: 0.05em;
+}
+
+.friend-card {
+    cursor: pointer;
+}
+
+.family-card {
+    cursor: pointer;
+}
+
+/* Asegurar que las sparkles se vean bien en family */
+.family-photo {
+    position: relative;
+}
+/* ============================================
+   BRILLITOS QUE CAEN AL HACER CLICK
+   ============================================ */
+#clickParticles {
+    position: fixed;
+    inset: 12;
+    pointer-events: none;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+.click-emoji {
+    position: absolute;
+    will-change: transform, opacity;
+    animation: clickFall 1.6s cubic-bezier(0.25, 0.6, 0.4, 1) forwards;
+    filter: drop-shadow(0 0 8px rgba(255, 215, 100, 0.8));
+}
+
+@keyframes clickFall {
+    0% {
+        transform: translate(-50%, -50%) scale(0.3) rotate(0deg);
+        opacity: 0;
+    }
+    15% {
+        transform: translate(calc(-50% + var(--dx) * 0.3), calc(-50% - 60px)) scale(1.5) rotate(calc(var(--rot) * 0.2));
+        opacity: 1;
+    }
+    100% {
+        transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(0.4) rotate(var(--rot));
+        opacity: 0;
+    }
+}
+/* ============================================
+   FIRMA "by Alexandra Mondragón"
+   ============================================ */
+.intro-author {
+    font-family: var(--font-poetic);
+    font-style: italic;
+    font-size: clamp(1rem, 2vw, 1.4rem);
+    color: var(--color-cream);
+    letter-spacing: 0.15em;
+    margin-top: -1rem;
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    animation: authorAppear 1.2s ease-out 5.2s forwards;
+}
+
+.intro-author span {
+    font-family: var(--font-display);
+    font-style: normal;
+    font-weight: 700;
+    color: var(--color-gold);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-size: 1.1em;
+}
+
+@keyframes authorAppear {
+    to {
+        opacity: 1;
+    }
+}
+
+/* ============================================
+   CORAZÓN QUE SE EXPANDE (transición)
+   ============================================ */
+.intro-heart {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    transform: translate(-50%, -50%) scale(0);
+    z-index: 1500;
+    pointer-events: none;
+    opacity: 0;
+}
+
+/* La forma del corazón usando pseudo-elementos */
+.intro-heart::before,
+.intro-heart::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 160px;
+    background: var(--color-pink);
+    border-radius: 100px 100px 0 0;
+    box-shadow: 0 0 80px rgba(212, 117, 140, 0.6);
+}
+
+.intro-heart::before {
+    left: 50px;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+
+.intro-heart::after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
+
+/* Cuando se activa, el corazón crece y cubre toda la pantalla */
+.intro-heart.expand {
+    animation: heartExpand 1.4s cubic-bezier(0.5, 0, 0.5, 1) forwards;
+}
+
+@keyframes heartExpand {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+    }
+    20% {
+        transform: translate(-50%, -50%) scale(0.3);
+        opacity: 1;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(40);
+        opacity: 1;
+    }
+}
+
+/* Cuando el corazón ya cubrió todo, se desvanece para revelar el contenido */
+.intro-heart.fade {
+    animation: heartFade 0.8s ease-out forwards;
+}
+
+@keyframes heartFade {
+    to {
+        opacity: 0;
+    }
+}
+/* ============================================
+   POLAROID CLICKABLE (indicador)
+   ============================================ */
+.polaroid-clickable {
+    cursor: pointer;
+    position: relative;
+}
+
+.polaroid-hint {
+    position: absolute;
+    bottom: -2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-poetic);
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--color-pink);
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.polaroid-clickable:hover .polaroid-hint {
+    opacity: 1;
+}
+
+/* ============================================
+   GALERÍA NUBE DE RECUERDOS (GRID ORGANIZADO)
+   ============================================ */
+.baby-gallery {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+.baby-gallery.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.baby-gallery-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 10, 10, 0.92);
+    backdrop-filter: blur(15px);
+}
+
+.baby-gallery-content {
+    position: relative;
+    width: 95%;
+    max-width: 1100px;
+    height: 90vh;
+    max-height: 850px;
+    background: var(--color-cream);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 30px 100px rgba(0, 0, 0, 0.6);
+    border: 1px solid var(--color-gold);
+    transform: scale(0.95);
+    transition: transform 0.6s var(--transition-smooth);
+    display: flex;
+    flex-direction: column;
+}
+
+.baby-gallery.active .baby-gallery-content {
+    transform: scale(1);
+}
+
+/* Botón cerrar */
+.baby-gallery-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: var(--color-chocolate);
+    color: var(--color-cream);
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+    transition: all 0.3s ease;
+}
+
+.baby-gallery-close:hover {
+    background: var(--color-pink);
+    transform: rotate(90deg) scale(1.1);
+}
+
+/* Header (fijo arriba) */
+.baby-gallery-header {
+    text-align: center;
+    padding: 2.5rem 2rem 1rem;
+    flex-shrink: 0; /* No se encoge */
+    border-bottom: 1px solid rgba(201, 169, 97, 0.3);
+}
+
+.baby-gallery-tag {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    letter-spacing: 0.4em;
+    color: var(--color-gold);
+    text-transform: uppercase;
+    padding: 0.3rem 1rem;
+    border: 1px solid var(--color-gold);
+    margin-bottom: 1rem;
+}
+
+.baby-gallery-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--color-chocolate);
+    margin-bottom: 0.5rem;
+    font-weight: 900;
+}
+
+.baby-gallery-title em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--color-pink);
+}
+
+.baby-gallery-subtitle {
+    font-family: var(--font-poetic);
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--color-chocolate);
+    opacity: 0.7;
+    letter-spacing: 0.05em;
+}
+
+/* GRID DE FOTOS (Aquí está la magia del orden) */
+.baby-cloud {
+    flex-grow: 1; /* Ocupa el espacio restante */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    padding: 2.5rem 3rem 3rem;
+    overflow-y: auto; /* Permite scroll si hay muchas fotos */
+    align-content: start;
+}
+
+/* Scrollbar bonito para la galería */
+.baby-cloud::-webkit-scrollbar {
+    width: 6px;
+}
+.baby-cloud::-webkit-scrollbar-track {
+    background: transparent;
+}
+.baby-cloud::-webkit-scrollbar-thumb {
+    background: var(--color-pink);
+    border-radius: 3px;
+}
+
+/* Cada foto tipo polaroid */
+.baby-photo {
+    position: relative;
+    background: var(--color-white);
+    padding: 0.8rem 0.8rem 2.5rem;
+    box-shadow: 0 8px 25px rgba(42, 24, 16, 0.15);
+    cursor: pointer;
+    transition: all 0.4s var(--transition-smooth);
+    opacity: 0;
+}
+
+/* Animación de entrada escalonada con ligera rotación tipo scrapbook */
+.baby-gallery.active .baby-photo:nth-child(1) { animation: photoPop 0.6s 0.1s ease-out forwards; }
+.baby-gallery.active .baby-photo:nth-child(2) { animation: photoPop 0.6s 0.2s ease-out forwards; }
+.baby-gallery.active .baby-photo:nth-child(3) { animation: photoPop 0.6s 0.3s ease-out forwards; }
+.baby-gallery.active .baby-photo:nth-child(4) { animation: photoPop 0.6s 0.4s ease-out forwards; }
+.baby-gallery.active .baby-photo:nth-child(5) { animation: photoPop 0.6s 0.5s ease-out forwards; }
+.baby-gallery.active .baby-photo:nth-child(6) { animation: photoPop 0.6s 0.6s ease-out forwards; }
+.baby-gallery.active .baby-photo:nth-child(7) { animation: photoPop 0.6s 0.7s ease-out forwards; }
+.baby-gallery.active .baby-photo:nth-child(8) { animation: photoPop 0.6s 0.8s ease-out forwards; }
+
+/* Rotaciones alternadas para que se vea natural pero ordenado */
+.baby-photo:nth-child(odd) { transform: rotate(-2deg); }
+.baby-photo:nth-child(even) { transform: rotate(2deg); }
+.baby-photo:nth-child(3n) { transform: rotate(-1deg); }
+
+@keyframes photoPop {
+    0% { opacity: 0; transform: translateY(30px) scale(0.8) rotate(0deg); }
+    100% { opacity: 1; } /* La rotación final la da el nth-child de arriba */
+}
+
+/* Efecto al pasar el mouse: se endereza y crece */
+.baby-photo:hover {
+    transform: rotate(0deg) scale(1.08) !important;
+    z-index: 10;
+    box-shadow: 0 20px 50px rgba(42, 24, 16, 0.3);
+}
+
+.baby-photo img {
+    width: 100%;
+    aspect-ratio: 4 / 5; /* Formato vertical tipo polaroid */
+    object-fit: cover;
+    display: block;
+    border-radius: 2px;
+}
+
+.baby-label {
+    position: absolute;
+    bottom: 0.6rem;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-family: var(--font-poetic);
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--color-chocolate);
+    opacity: 0.8;
+    letter-spacing: 0.05em;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .baby-cloud {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        padding: 2rem 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .baby-cloud {
+        grid-template-columns: 1fr;
+        max-width: 280px;
+        margin: 0 auto;
+    }
+}
+
+/* ============================================
+   RESPONSIVE GALERÍA BEBÉ
+   ============================================ */
+@media (max-width: 900px) {
+    .baby-photo img {
+        width: 110px;
+        height: 110px;
+    }
+    
+    .baby-cloud {
+        padding: 10rem 1rem 4rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .baby-photo img {
+        width: 85px;
+        height: 85px;
+    }
+    
+    .baby-photo {
+        padding: 0.5rem 0.5rem 1.8rem;
+    }
+    
+    .baby-label {
+        font-size: 0.65rem;
+    }
+    
+    .baby-gallery-title {
+        font-size: 2rem;
+    }
+}
+/* ============================================
+   LLUVIA DE BRILLITOS EN WELCOME
+   ============================================ */
+.section-welcome {
+    position: relative;
+    overflow: hidden; /* Para que los brillitos no salgan de la sección */
+}
+
+.welcome-sparkles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.welcome-sparkle {
+    position: absolute;
+    top: -50px;
+    font-size: 1.5rem;
+    animation: welcomeSparkleFall linear infinite;
+    opacity: 0;
+    filter: drop-shadow(0 0 6px rgba(255, 215, 100, 0.6));
+}
+
+@keyframes welcomeSparkleFall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Asegurar que el contenido esté por encima de los brillitos */
+.welcome-grid {
+    position: relative;
+    z-index: 2;
+}
+/* ============================================
+   FLECHA "NEXT CHAPTER" CON ESTRELLAS
+   ============================================ */
+
+/* Contenedor de la flecha */
+.next-chapter-wrapper {
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.next-chapter-label {
+    font-family: var(--font-poetic);
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--color-gold);
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+/* La flecha */
+.next-chapter-arrow {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: transparent;
+    border: 2px solid var(--color-gold);
+    color: var(--color-gold);
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s var(--transition-smooth);
+    position: relative;
+    animation: arrowPulse 2s ease-in-out infinite;
+}
+
+.next-chapter-arrow:hover {
+    background: var(--color-gold);
+    color: var(--color-cream);
+    transform: scale(1.15);
+    box-shadow: 0 0 30px rgba(201, 169, 97, 0.6);
+}
+
+.next-chapter-arrow::before {
+    content: '';
+    position: absolute;
+    inset: -8px;
+    border-radius: 50%;
+    border: 1px solid var(--color-gold);
+    opacity: 0.3;
+    animation: arrowRing 2s ease-in-out infinite;
+}
+
+@keyframes arrowPulse {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(8px);
+    }
+}
+
+@keyframes arrowRing {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.3;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.1;
+    }
+}
+
+/* ============================================
+   EXPLOSIÓN DE ESTRELLAS AL HACER CLICK
+   ============================================ */
+.star-explosion-container {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9998;
+    overflow: hidden;
+}
+
+.star-explosion {
+    position: absolute;
+    font-size: 2rem;
+    filter: drop-shadow(0 0 15px rgba(201, 169, 97, 0.8));
+    animation: starExplode 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    opacity: 0;
+}
+
+@keyframes starExplode {
+    0% {
+        transform: translate(-50%, -50%) scale(0) rotate(0deg);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+        transform: translate(calc(-50% + var(--tx) * 0.2), calc(-50% + var(--ty) * 0.2)) scale(1.5) rotate(calc(var(--rot) * 0.3));
+    }
+    100% {
+        transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty))) scale(0.3) rotate(var(--rot));
+        opacity: 0;
+    }
+}
+
+/* Estrellas con sombras más intensas */
+.star-explosion.star-glow {
+    filter: 
+        drop-shadow(0 0 20px rgba(201, 169, 97, 1))
+        drop-shadow(0 0 40px rgba(212, 117, 140, 0.6));
+}
+
+/* ============================================
+   MODAL CINEMATOGRÁFICO DEL MOOD BOARD
+   ============================================ */
+
+/* Contenedor principal */
+.aesthetic-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 3000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+.aesthetic-modal.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* Flash de paparazzi */
+.paparazzi-flash {
+    position: fixed;
+    inset: 0;
+    background: var(--color-white);
+    z-index: 3001;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.paparazzi-flash.flash {
+    animation: paparazziFlash 0.6s ease-out forwards;
+}
+
+@keyframes paparazziFlash {
+    0% { opacity: 0; }
+    15% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* Fondo oscuro */
+.aesthetic-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(20px);
+}
+
+/* Contenido del modal */
+.aesthetic-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    z-index: 3002;
+    transform: scale(0.8);
+    transition: transform 0.5s var(--transition-smooth);
+}
+
+.aesthetic-modal.active .aesthetic-content {
+    transform: scale(1);
+}
+
+/* Botón cerrar */
+.aesthetic-close {
+    position: absolute;
+    top: -3rem;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: transparent;
+    border: 2px solid var(--color-gold);
+    color: var(--color-gold);
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.aesthetic-close:hover {
+    background: var(--color-gold);
+    color: var(--color-black);
+    transform: rotate(90deg) scale(1.1);
+}
+
+/* Header con etiqueta */
+.aesthetic-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    padding: 0 1rem;
+}
+
+.aesthetic-tag {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    letter-spacing: 0.4em;
+    color: var(--color-gold);
+    text-transform: uppercase;
+    padding: 0.5rem 1.2rem;
+    border: 1px solid var(--color-gold);
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: tagAppear 0.6s 0.3s ease-out forwards;
+}
+
+.aesthetic-xoxo {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--color-pink);
+    letter-spacing: 0.3em;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: tagAppear 0.6s 0.5s ease-out forwards;
+}
+
+@keyframes tagAppear {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Wrapper de la imagen con marco */
+.aesthetic-image-wrapper {
+    position: relative;
+    max-width: 80vw;
+    max-height: 65vh;
+}
+
+.aesthetic-image {
+    max-width: 100%;
+    max-height: 65vh;
+    object-fit: contain;
+    display: block;
+    box-shadow: 
+        0 30px 80px rgba(0, 0, 0, 0.6),
+        0 0 60px rgba(212, 117, 140, 0.3);
+    border-radius: 4px;
+    opacity: 0;
+    transform: scale(0.9);
+    animation: imageReveal 0.8s 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes imageReveal {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Marco dorado decorativo */
+.aesthetic-frame {
+    position: absolute;
+    inset: -15px;
+    border: 1px solid var(--color-gold);
+    pointer-events: none;
+    opacity: 0;
+    animation: frameAppear 0.8s 0.6s ease-out forwards;
+}
+
+.aesthetic-frame::before,
+.aesthetic-frame::after {
+    content: '✦';
+    position: absolute;
+    color: var(--color-gold);
+    font-size: 1rem;
+}
+
+.aesthetic-frame::before {
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.aesthetic-frame::after {
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@keyframes frameAppear {
+    to { opacity: 0.6; }
+}
+
+/* Navegación */
+.aesthetic-nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.aesthetic-arrow {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: transparent;
+    border: 2px solid var(--color-cream);
+    color: var(--color-cream);
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.aesthetic-arrow:hover {
+    background: var(--color-pink);
+    border-color: var(--color-pink);
+    color: var(--color-white);
+    transform: scale(1.1);
+}
+
+.aesthetic-counter {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    color: var(--color-cream);
+    letter-spacing: 0.2em;
+    min-width: 80px;
+    text-align: center;
+}
+
+/* Cursor pointer en las imágenes del corazón */
+.heart-img {
+    cursor: zoom-in;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .aesthetic-content {
+        max-width: 95vw;
+    }
+    
+    .aesthetic-image {
+        max-height: 55vh;
+    }
+    
+    .aesthetic-header {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .aesthetic-close {
+        top: -2.5rem;
+        right: 0;
+    }
+}
+/* ============================================
+   BOTÓN "TURN THE PAGE" - ESQUINA DOBLADA
+   ============================================ */
+
+/* Contenedor del botón */
+.turn-page-wrapper {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 10;
+    cursor: pointer;
+    perspective: 1000px;
+}
+
+/* La esquina doblada (dog-ear) */
+.turn-page-corner {
+    width: 120px;
+    height: 120px;
+    position: relative;
+    transition: all 0.5s var(--transition-smooth);
+}
+
+/* Triángulo de la esquina (la parte doblada) */
+.turn-page-corner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 120px 120px 0;
+    border-color: transparent var(--color-chocolate) transparent transparent;
+    box-shadow: -5px 5px 15px rgba(42, 24, 16, 0.3);
+    transition: all 0.5s var(--transition-smooth);
+}
+
+/* Texto diagonal sobre la esquina */
+.turn-page-text {
+    position: absolute;
+    top: 22px;
+    right: -35px;
+    transform: rotate(45deg);
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    color: var(--color-gold);
+    text-transform: uppercase;
+    white-space: nowrap;
+    pointer-events: none;
+    transition: all 0.5s var(--transition-smooth);
+}
+
+/* Etiqueta del próximo capítulo */
+.turn-page-label {
+    position: absolute;
+    bottom: -2rem;
+    right: 0;
+    font-family: var(--font-poetic);
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--color-chocolate);
+    opacity: 0.7;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+    transition: all 0.4s ease;
+}
+
+/* HOVER: la esquina se "despliega" un poco */
+.turn-page-wrapper:hover .turn-page-corner::before {
+    border-width: 0 140px 140px 0;
+    border-color: transparent var(--color-pink) transparent transparent;
+}
+
+.turn-page-wrapper:hover .turn-page-text {
+    color: var(--color-white);
+    transform: rotate(45deg) translateX(-5px);
+}
+
+.turn-page-wrapper:hover .turn-page-label {
+    color: var(--color-pink);
+    opacity: 1;
+    transform: translateX(-5px);
+}
+
+/* Animación de "despliegue" al hacer click */
+.turn-page-corner.unfolding::before {
+    animation: pageUnfold 0.8s cubic-bezier(0.5, 0, 0.5, 1) forwards;
+}
+
+@keyframes pageUnfold {
+    0% {
+        border-width: 0 120px 120px 0;
+    }
+    50% {
+        border-width: 0 200px 200px 0;
+        border-color: transparent var(--color-gold) transparent transparent;
+    }
+    100% {
+        border-width: 0 400px 400px 0;
+        border-color: transparent var(--color-gold) transparent transparent;
+        opacity: 0;
+    }
+}
+
+/* ============================================
+   EXPLOSIÓN DE LETRAS X · O · X · O
+   ============================================ */
+.letter-explosion-container {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9997;
+    overflow: hidden;
+}
+
+.flying-letter {
+    position: absolute;
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-style: italic;
+    color: var(--color-gold);
+    text-shadow: 
+        0 0 20px rgba(201, 169, 97, 0.8),
+        0 0 40px rgba(212, 117, 140, 0.5);
+    animation: letterFly 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    opacity: 0;
+}
+
+.flying-letter.pink {
+    color: var(--color-pink);
+    text-shadow: 
+        0 0 20px rgba(212, 117, 140, 0.8),
+        0 0 40px rgba(201, 169, 97, 0.5);
+}
+
+@keyframes letterFly {
+    0% {
+        transform: translate(-50%, -50%) scale(0) rotate(0deg);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+        transform: translate(calc(-50% + var(--tx) * 0.15), calc(-50% + var(--ty) * 0.15)) scale(1.8) rotate(calc(var(--rot) * 0.2));
+    }
+    100% {
+        transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty))) scale(0.3) rotate(var(--rot));
+        opacity: 0;
+    }
+}
+
+/* Efecto de "página volteándose" - overlay sutil */
+.page-turn-overlay {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9996;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(250, 246, 240, 0.3) 50%, 
+        transparent 100%);
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+.page-turn-overlay.turning {
+    animation: pageTurnSweep 1.2s ease-in-out forwards;
+}
+
+@keyframes pageTurnSweep {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .turn-page-corner {
+        width: 90px;
+        height: 90px;
+    }
+    
+    .turn-page-corner::before {
+        border-width: 0 90px 90px 0;
+    }
+    
+    .turn-page-text {
+        font-size: 0.65rem;
+        top: 16px;
+        right: -28px;
+    }
+}
+/* ============================================
+   ✨ 1. CURSOR PERSONALIZADO CON RASTRO MÁGICO
+   ============================================ */
+body {
+    cursor: none;
+}
+
+a, button, .heart-img, .friend-card, .family-card, .love-card, .talent-item, .dream-card, .polaroid-clickable, .trait-reveal, .mood-item, input, textarea {
+    cursor: none;
+}
+
+/* Cursor principal (estrellita dorada) */
+.magic-cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
+    z-index: 99999;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease-out;
+    font-size: 1.2rem;
+    color: var(--color-gold);
+    text-shadow: 0 0 10px rgba(201, 169, 97, 0.8);
+    animation: cursorPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes cursorPulse {
+    0%, 100% { transform: translate(-50%, -50%) scale(1) rotate(0deg); }
+    50% { transform: translate(-50%, -50%) scale(1.2) rotate(180deg); }
+}
+
+/* Rastro de brillitos */
+.cursor-trail {
+    position: fixed;
+    pointer-events: none;
+    z-index: 99998;
+    font-size: 0.8rem;
+    color: var(--color-gold);
+    text-shadow: 0 0 8px rgba(201, 169, 97, 0.6);
+    animation: trailFade 1s ease-out forwards;
+    transform: translate(-50%, -50%);
+}
+
+.cursor-trail.pink {
+    color: var(--color-pink);
+    text-shadow: 0 0 8px rgba(212, 117, 140, 0.6);
+}
+
+.cursor-trail.butterfly {
+    font-size: 1rem;
+}
+
+@keyframes trailFade {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, calc(-50% - 30px)) scale(0.3);
+    }
+}
+
+/* Cuando está sobre algo interactivo, el cursor cambia */
+.magic-cursor.hover {
+    font-size: 1.8rem;
+    color: var(--color-pink);
+    animation: cursorHover 0.6s ease-in-out infinite;
+}
+
+@keyframes cursorHover {
+    0%, 100% { transform: translate(-50%, -50%) scale(1) rotate(0deg); }
+    50% { transform: translate(-50%, -50%) scale(1.4) rotate(180deg); }
+}
+
+/* ============================================
+   📖 2. SECCIÓN MANIFIESTO FINAL
+   ============================================ */
+.section-manifesto {
+    background: var(--color-black);
+    color: var(--color-cream);
+    min-height: 100vh;
+    padding: 8rem 2rem;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estrellas de fondo sutiles */
+.section-manifesto::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+        radial-gradient(2px 2px at 20% 30%, var(--color-gold), transparent),
+        radial-gradient(2px 2px at 60% 70%, var(--color-pink), transparent),
+        radial-gradient(1px 1px at 50% 50%, var(--color-gold), transparent),
+        radial-gradient(1px 1px at 80% 10%, var(--color-cream), transparent),
+        radial-gradient(2px 2px at 90% 60%, var(--color-gold), transparent),
+        radial-gradient(1px 1px at 33% 80%, var(--color-pink), transparent);
+    background-size: 200% 200%;
+    opacity: 0.3;
+    animation: starsTwinkle 8s ease-in-out infinite;
+}
+
+@keyframes starsTwinkle {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 0.5; }
+}
+
+.manifesto-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    text-align: center;
+}
+
+.manifesto-tag {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    letter-spacing: 0.5em;
+    color: var(--color-gold);
+    text-transform: uppercase;
+    padding: 0.5rem 1.5rem;
+    border: 1px solid var(--color-gold);
+    margin-bottom: 3rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 1s ease;
+}
+
+.manifesto-tag.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.manifesto-text {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+    line-height: 1.8;
+    color: var(--color-cream);
+    margin-bottom: 3rem;
+}
+
+.manifesto-line {
+    display: block;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s ease;
+    margin-bottom: 0.5rem;
+}
+
+.manifesto-line.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.manifesto-line em {
+    font-style: italic;
+    color: var(--color-pink);
+}
+
+.manifesto-line strong {
+    color: var(--color-gold);
+    font-weight: 900;
+}
+
+.manifesto-line.highlight {
+    font-size: 1.3em;
+    color: var(--color-gold);
+    margin-top: 2rem;
+    font-style: italic;
+}
+
+/* Firma final */
+.manifesto-signature {
+    margin-top: 4rem;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1.5s ease;
+}
+
+.manifesto-signature.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.signature-name {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    background: linear-gradient(90deg, var(--color-gold), var(--color-pink), var(--color-gold));
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 3s linear infinite;
+    margin-bottom: 1rem;
+}
+
+@keyframes shimmer {
+    to { background-position: 200% center; }
+}
+
+.signature-subtitle {
+    font-family: var(--font-poetic);
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--color-cream);
+    opacity: 0.7;
+    letter-spacing: 0.2em;
+}
+
+.signature-xoxo {
+    margin-top: 2rem;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.5rem;
+    color: var(--color-pink);
+    letter-spacing: 0.5em;
+}
+
+/* ============================================
+   🕵️‍♀️ 3. EASTER EGG GOSSIP GIRL MODE
+   ============================================ */
+.gossip-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    background: rgba(10, 0, 0, 0.97);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.6s ease;
+    overflow: hidden;
+}
+
+.gossip-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* Efecto de líneas rojas estilo Gossip Girl */
+.gossip-overlay::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+        linear-gradient(90deg, transparent 49%, rgba(200, 30, 50, 0.1) 50%, transparent 51%),
+        linear-gradient(0deg, transparent 49%, rgba(200, 30, 50, 0.1) 50%, transparent 51%);
+    background-size: 50px 50px;
+    animation: gossipGrid 2s linear infinite;
+}
+
+@keyframes gossipGrid {
+    to { background-position: 50px 50px; }
+}
+
+.gossip-logo {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 10vw, 7rem);
+    font-weight: 900;
+    font-style: italic;
+    color: var(--color-white);
+    letter-spacing: 0.1em;
+    margin-bottom: 2rem;
+    text-shadow: 
+        0 0 20px rgba(200, 30, 50, 0.8),
+        0 0 40px rgba(200, 30, 50, 0.5);
+    animation: gossipPulse 1.5s ease-in-out infinite;
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes gossipPulse {
+    0%, 100% { 
+        text-shadow: 
+            0 0 20px rgba(200, 30, 50, 0.8),
+            0 0 40px rgba(200, 30, 50, 0.5);
+    }
+    50% { 
+        text-shadow: 
+            0 0 30px rgba(200, 30, 50, 1),
+            0 0 60px rgba(200, 30, 50, 0.8),
+            0 0 80px rgba(200, 30, 50, 0.4);
+    }
+}
+
+.gossip-text {
+    font-family: var(--font-poetic);
+    font-style: italic;
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    color: var(--color-cream);
+    text-align: center;
+    max-width: 700px;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: gossipTextAppear 1s 0.5s ease-out forwards;
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes gossipTextAppear {
+    to { opacity: 1; }
+}
+
+.gossip-text strong {
+    color: #c81e32;
+    font-weight: 700;
+}
+
+.gossip-signature {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.5rem;
+    color: #c81e32;
+    letter-spacing: 0.5em;
+    margin-top: 2rem;
+    opacity: 0;
+    animation: gossipTextAppear 1s 1.2s ease-out forwards;
+    position: relative;
+    z-index: 2;
+}
+
+/* Coronas flotando en modo Gossip */
+.gossip-crown {
+    position: absolute;
+    font-size: 2rem;
+    animation: crownFloat 4s ease-in-out infinite;
+    opacity: 0.6;
+}
+
+@keyframes crownFloat {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(10deg); }
+}
+
+/* Indicador de combinación secreta */
+.secret-hint {
+    position: fixed;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    color: var(--color-chocolate);
+    opacity: 0.4;
+    letter-spacing: 0.2em;
+    z-index: 50;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.secret-hint:hover {
+    opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .magic-cursor, .cursor-trail {
+        display: none;
+    }
+    body, a, button {
+        cursor: auto;
+    }
+}
+/* ============================================
+   BOTÓN "GOLDEN KEY" - LLAVE DORADA
+   ============================================ */
+
+.golden-key-wrapper {
+    position: absolute;
+    bottom: 8rem;
+    left: 3rem;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    color: inherit;
+}
+
+.golden-key-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-gold) 0%, #d9bf85 50%, var(--color-gold) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    box-shadow: 
+        0 8px 25px rgba(201, 169, 97, 0.4),
+        inset 0 2px 4px rgba(255, 255, 255, 0.3);
+    transition: all 0.4s var(--transition-smooth);
+    animation: keyFloat 3s ease-in-out infinite;
+}
+
+@keyframes keyFloat {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-8px) rotate(5deg); }
+}
+
+.golden-key-wrapper:hover .golden-key-icon {
+    transform: scale(1.15) rotate(-10deg);
+    box-shadow: 
+        0 15px 40px rgba(201, 169, 97, 0.6),
+        0 0 30px rgba(201, 169, 97, 0.4);
+}
+
+.golden-key-label {
+    font-family: var(--font-poetic);
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--color-gold);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.golden-key-wrapper:hover .golden-key-label {
+    color: var(--color-pink);
+    opacity: 1;
+}
+
+.golden-key-next {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--color-chocolate);
+    letter-spacing: 0.1em;
+    opacity: 0.7;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .golden-key-wrapper {
+        left: 1.5rem;
+        bottom: 6rem;
+    }
+    
+    .golden-key-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.7rem;
+    }
+}
+/* ============================================
+   SOLUCIÓN: Polaroids siempre visibles
+   ============================================ */
+.diary-page {
+    opacity: 1 !important;
+    transform: none !important;
+}
+/* ============================================
+   ESTILO VOGUE / EDITORIAL PARA CHAPTER 3
+   ============================================ */
+
+/* Fondo tipo papel de revista */
+.section-love {
+    background-color: #fdfbf7 !important; /* Color crema papel */
+    background-image: 
+        radial-gradient(circle at 15% 30%, rgba(212, 117, 140, 0.04) 0%, transparent 50%),
+        radial-gradient(circle at 85% 70%, rgba(201, 169, 97, 0.04) 0%, transparent 50%) !important;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Barra superior de la revista */
+.vogue-top-bar {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.4em;
+    color: #1a1a1a;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+/* Título gigante tipo masthead */
+.vogue-masthead {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 0.85;
+    margin-bottom: 2rem;
+}
+
+.vogue-small {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-weight: 300;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.vogue-huge {
+    font-family: 'Didot', 'Bodoni MT', 'Times New Roman', serif;
+    font-size: clamp(5rem, 15vw, 12rem);
+    font-weight: 900;
+    color: #1a1a1a;
+    letter-spacing: -0.03em;
+}
+
+.vogue-huge em {
+    font-style: italic;
+    color: var(--color-pink);
+    font-weight: 400;
+}
+
+.vogue-subhead {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.3em;
+    color: #555;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+}
+
+.vogue-decoration-line {
+    width: 1px;
+    height: 80px;
+    background: var(--color-gold);
+    margin: 0 auto;
+}
+
+/* Marca de agua gigante */
+.vogue-watermark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Didot', 'Bodoni MT', 'Times New Roman', serif;
+    font-size: 35vw;
+    font-weight: 900;
+    color: rgba(0, 0, 0, 0.02);
+    pointer-events: none;
+    z-index: 0;
+    letter-spacing: -0.05em;
+    line-height: 1;
+}
+
+/* Asegurar que el contenido esté por encima de la marca de agua */
+.diary-pages, .vogue-footer, .golden-key-wrapper {
+    position: relative;
+    z-index: 2;
+}
+
+/* Polaroids estilo recorte de revista */
+.diary-page {
+    background: #fff;
+    padding: 1rem;
+    border: 1px solid #e5e5e5;
+    box-shadow: 
+        8px 8px 0px rgba(0, 0, 0, 0.05),
+        0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+.diary-page:hover {
+    box-shadow: 
+        12px 12px 0px rgba(212, 117, 140, 0.2),
+        0 25px 60px rgba(0, 0, 0, 0.12);
+}
+
+.page-number {
+    background: #1a1a1a !important;
+    color: #fff !important;
+    border: none !important;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Footer estilo revista */
+.vogue-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-top: 2px solid #1a1a1a;
+    padding-top: 2rem;
+    margin-top: 4rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.vogue-barcode {
+    text-align: center;
+}
+
+.barcode-lines {
+    font-family: 'Libre Barcode 39', 'Courier New', monospace;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    color: #1a1a1a;
+    line-height: 1;
+}
+
+.barcode-text {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: #555;
+    margin-top: 0.5rem;
+}
+
+.vogue-quote {
+    text-align: center;
+    flex-grow: 1;
+    padding: 0 2rem;
+}
+
+.vogue-quote p {
+    font-family: 'Didot', 'Bodoni MT', 'Times New Roman', serif;
+    font-size: clamp(1.2rem, 2vw, 1.8rem);
+    font-style: italic;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+}
+
+.vogue-price {
+    text-align: right;
+}
+
+.vogue-price span {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    color: var(--color-gold);
+    border: 2px solid var(--color-gold);
+    padding: 0.5rem 1rem;
+    display: inline-block;
+}
+
+/* Responsive para el footer */
+@media (max-width: 768px) {
+    .vogue-footer {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .vogue-price {
+        text-align: center;
+    }
+    
+    .vogue-quote {
+        padding: 0;
+    }
+}
+/* ============================================
+   ARREGLOS: TÍTULO CON MOVIMIENTO, BOTÓN Y CÓDIGO DE BARRAS
+   ============================================ */
+
+/* 1. MOVIMIENTO ELEGANTE PARA EL TÍTULO VOGUE */
+.vogue-top-bar {
+    animation: fadeDown 1s ease-out forwards;
+    opacity: 0;
+}
+
+.vogue-small {
+    display: block;
+    animation: fadeUp 1s 0.3s ease-out forwards;
+    opacity: 0;
+}
+
+.vogue-huge {
+    display: block;
+    animation: scaleReveal 1.2s 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    opacity: 0;
+    transform: scale(0.9);
+}
+
+.vogue-subhead {
+    animation: fadeUp 1s 1s ease-out forwards;
+    opacity: 0;
+}
+
+.vogue-decoration-line {
+    animation: growLine 1s 1.2s ease-out forwards;
+    transform: scaleY(0);
+    transform-origin: top;
+}
+
+/* Animaciones */
+@keyframes fadeDown { 
+    from { opacity: 0; transform: translateY(-20px); } 
+    to { opacity: 1; transform: translateY(0); } 
+}
+
+@keyframes fadeUp { 
+    from { opacity: 0; transform: translateY(20px); } 
+    to { opacity: 1; transform: translateY(0); } 
+}
+
+@keyframes scaleReveal { 
+    from { opacity: 0; transform: scale(0.9); } 
+    to { opacity: 1; transform: scale(1); } 
+}
+
+@keyframes growLine { 
+    from { transform: scaleY(0); } 
+    to { transform: scaleY(1); } 
+}
+
+/* 2. BAJAR EL BOTÓN DE LA LLAVE (para que no tape la frase) */
+.golden-key-wrapper {
+    bottom: 2rem !important; /* Lo movemos al fondo real */
+}
+
+/* 3. CÓDIGO DE BARRAS REAL Y AESTHETIC (reemplaza el feo) */
+.barcode-lines {
+    width: 120px;
+    height: 50px;
+    margin: 0 auto 0.5rem;
+    /* Esto crea un código de barras real usando gradientes CSS */
+    background: repeating-linear-gradient(
+        90deg,
+        #1a1a1a 0px, #1a1a1a 2px,
+        transparent 2px, transparent 4px,
+        #1a1a1a 4px, #1a1a1a 5px,
+        transparent 5px, transparent 8px,
+        #1a1a1a 8px, #1a1a1a 11px,
+        transparent 11px, transparent 13px
+    );
+    border-radius: 2px;
+}
+
+.barcode-text {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    color: #1a1a1a;
+}
+/* ============================================
+   SOLUCIÓN: Retratos siempre visibles
+   ============================================ */
+.family-portrait {
+    opacity: 1 !important;
+    transform: none !important;
+}
+/* Modal de Carta Familiar */
+.family-letter-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 99999; /* Muy alto para estar encima de todo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none; /* No intercepta clics cuando está oculto */
+    transition: opacity 0.3s ease;
+}
+
+.family-letter-modal.active {
+    opacity: 1;
+    pointer-events: all; /* Sí intercepta clics cuando está activo */
+}
+
+.family-letter-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+}
+
+.family-letter-content {
+    position: relative;
+    background: #fdfbf7; /* Color crema suave */
+    padding: 2.5rem;
+    border-radius: 12px;
+    max-width: 550px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    z-index: 100000;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(201, 169, 97, 0.3);
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+
+.family-letter-modal.active .family-letter-content {
+    transform: translateY(0);
+}
+
+.family-letter-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.2s;
+}
+
+.family-letter-close:hover {
+    color: #d4758c; /* Color rosa */
+}
+/* ============================================
+   BOTÓN DE TRANSICIÓN DE FLOR
+   ============================================ */
+.flower-trigger-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 3rem auto;
+    padding: 1rem 2.5rem;
+    background: transparent;
+    border: 1px solid var(--color-gold, #c9a961);
+    color: var(--color-gold, #c9a961);
+    font-family: var(--font-display, 'Playfair Display', serif);
+    font-size: 1.1rem;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    overflow: hidden;
+}
+
+.flower-trigger-btn:hover {
+    background: var(--color-gold, #c9a961);
+    color: var(--color-black, #1a1a1a);
+    box-shadow: 0 0 30px rgba(201, 169, 97, 0.4);
+}
+
+.btn-sparkle {
+    display: inline-block;
+    animation: sparkleSpin 2s linear infinite;
+}
+
+@keyframes sparkleSpin {
+    0% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(180deg) scale(1.2); }
+    100% { transform: rotate(360deg) scale(1); }
+}
+
+/* ============================================
+   OVERLAY DE LA FLOR GIGANTE
+   ============================================ */
+.flower-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(10, 5, 5, 0.85);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+.flower-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.flower-container {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Cuando se activa, la flor crece para cubrir toda la pantalla */
+.flower-overlay.blooming .flower-container {
+    transform: scale(40); /* Escala gigante para cubrir la pantalla */
+}
+
+/* Centro de la flor */
+.flower-center {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: radial-gradient(circle, #ffd700, #c9a961);
+    border-radius: 50%;
+    z-index: 10;
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
+}
+
+/* Pétalos elegantes */
+.petal {
+    position: absolute;
+    width: 60px;
+    height: 100px;
+    background: linear-gradient(to top, rgba(212, 117, 140, 0.9), rgba(201, 169, 97, 0.6));
+    border-radius: 50% 50% 50% 50% / 70% 70% 30% 30%;
+    transform-origin: bottom center;
+    bottom: 50%;
+    left: 50%;
+    margin-left: -30px;
+    opacity: 0;
+    transition: all 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 0 15px rgba(212, 117, 140, 0.5);
+    backdrop-filter: blur(2px);
+}
+
+/* Animación de florecimiento de cada pétalo */
+.flower-overlay.blooming .petal {
+    opacity: 1;
+}
+
+.flower-overlay.blooming .p1 { transform: rotate(0deg) translateY(-60px); transition-delay: 0.1s; }
+.flower-overlay.blooming .p2 { transform: rotate(45deg) translateY(-60px); transition-delay: 0.15s; }
+.flower-overlay.blooming .p3 { transform: rotate(90deg) translateY(-60px); transition-delay: 0.2s; }
+.flower-overlay.blooming .p4 { transform: rotate(135deg) translateY(-60px); transition-delay: 0.25s; }
+.flower-overlay.blooming .p5 { transform: rotate(180deg) translateY(-60px); transition-delay: 0.3s; }
+.flower-overlay.blooming .p6 { transform: rotate(225deg) translateY(-60px); transition-delay: 0.35s; }
+.flower-overlay.blooming .p7 { transform: rotate(270deg) translateY(-60px); transition-delay: 0.4s; }
+.flower-overlay.blooming .p8 { transform: rotate(315deg) translateY(-60px); transition-delay: 0.45s; }
+
+/* ============================================
+   BRILLOS Y PARTÍCULAS MÁGICAS
+   ============================================ */
+.sparkle-container {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.magic-sparkle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 2px rgba(255, 215, 0, 0.8), 0 0 20px 4px rgba(212, 117, 140, 0.6);
+    animation: sparkleFloat 1.5s ease-out forwards;
+}
+
+@keyframes sparkleFloat {
+    0% {
+        transform: translate(0, 0) scale(0);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+        transform: translate(var(--tx), var(--ty)) scale(1.5);
+    }
+    100% {
+        transform: translate(calc(var(--tx) * 1.5), calc(var(--ty) * 1.5)) scale(0);
+        opacity: 0;
+    }
+}
+/* ============================================
+   BOTÓN FLOR (CHAPTER 5 -> 6)
+   ============================================ */
+.flower-btn-container {
+    text-align: center;
+    margin: 5rem 0 3rem;
+}
+
+.flower-btn {
+    background: linear-gradient(135deg, #fdfbf7 0%, #f5efe6 100%);
+    border: 2px solid var(--color-gold, #c9a961);
+    padding: 1.2rem 2.5rem;
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-display, serif);
+    font-size: 1.1rem;
+    color: var(--color-chocolate, #333);
+    transition: all 0.4s ease;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    letter-spacing: 0.05em;
+}
+
+.flower-btn:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(201, 169, 97, 0.3);
+    background: var(--color-gold, #c9a961);
+    color: white;
+}
+
+.flower-icon {
+    font-size: 1.6rem;
+    display: inline-block;
+    animation: spinFlower 6s linear infinite;
+}
+
+@keyframes spinFlower {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+/* ============================================
+   BOTÓN FLOR (CHAPTER 5 -> 6)
+   ============================================ */
+.flower-btn-container {
+    text-align: center;
+    margin: 5rem 0 3rem;
+}
+
+.flower-btn {
+    background: linear-gradient(135deg, #fdfbf7 0%, #f5efe6 100%);
+    border: 2px solid var(--color-gold, #c9a961);
+    padding: 1.2rem 2.5rem;
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-display, serif);
+    font-size: 1.1rem;
+    color: var(--color-chocolate, #333);
+    transition: all 0.4s ease;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    letter-spacing: 0.05em;
+}
+
+.flower-btn:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(201, 169, 97, 0.3);
+    background: var(--color-gold, #c9a961);
+    color: white;
+}
+
+.flower-icon {
+    font-size: 1.6rem;
+    display: inline-block;
+    animation: spinFlower 6s linear infinite;
+}
+
+@keyframes spinFlower {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+/* Efecto Overlay Flor */
+.flower-overlay-effect {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(253, 251, 247, 0.98);
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+.flower-overlay-effect.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.flower-center-icon {
+    font-size: 1rem;
+    animation: growFlower 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes growFlower {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(150); opacity: 0; }
+}
+/* --- Estilos del Botón Mágico --- */
+.magic-button {
+    position: relative;
+    padding: 1.2rem 2.5rem;
+    font-size: 1.1rem;
+    font-family: var(--font-display, 'Playfair Display', serif);
+    color: white;
+    background: linear-gradient(135deg, #d4758c, #c9a961);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(212, 117, 140, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.magic-button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(201, 169, 97, 0.6);
+}
+
+.magic-button .sparkle {
+    display: inline-block;
+    margin-left: 8px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin { 
+    100% { transform: rotate(360deg); } 
+}
+
+/* --- La Animación Increíble (Overlay) --- */
+.transition-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    /* Gradiente elegante y oscuro para la transición */
+    background: linear-gradient(135deg, #1a1a1a, #2d1b2e, #1a1a1a);
+    z-index: 9999;
+    pointer-events: none; /* Permite clicks cuando está oculto */
+    
+    /* La magia: empieza como un círculo de tamaño 0 en el centro */
+    clip-path: circle(0% at 50% 50%);
+    transition: clip-path 0.8s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Cuando se activa, el círculo crece hasta cubrir toda la pantalla */
+.transition-overlay.active {
+    clip-path: circle(150% at 50% 50%);
+    pointer-events: all;
+}
+
+/* Texto opcional que aparece durante la transición */
+.transition-overlay::after {
+    content: "Preparando el siguiente capítulo...";
+    color: #c9a961;
+    font-family: var(--font-display, 'Playfair Display', serif);
+    font-size: 1.5rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease 0.4s, transform 0.5s ease 0.4s;
+}
+
+.transition-overlay.active::after {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* ============================================
+   BOTÓN WOW: MY FRIENDS → MY DREAMS
+   ============================================ */
+.dreams-transition-wrapper {
+    text-align: center;
+    margin: 5rem 0 3rem;
+    padding: 2rem;
+    position: relative;
+}
+
+.dreams-page-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem 3rem;
+    background: linear-gradient(135deg, #fdfbf7 0%, #f5efe6 100%);
+    border: 2px solid var(--color-gold, #c9a961);
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: var(--font-display, serif);
+    color: var(--color-chocolate, #333);
+    transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    box-shadow: 
+        0 10px 30px rgba(201, 169, 97, 0.2),
+        inset 0 0 0 1px rgba(201, 169, 97, 0.3);
+    overflow: hidden;
+}
+
+.dreams-page-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 40px 40px 0;
+    border-color: transparent var(--color-gold, #c9a961) transparent transparent;
+    transition: all 0.4s ease;
+    opacity: 0.6;
+}
+
+.dreams-page-btn:hover {
+    transform: translateY(-5px) rotate(-1deg);
+    box-shadow: 
+        0 20px 50px rgba(212, 117, 140, 0.4),
+        0 0 0 1px var(--color-gold, #c9a961);
+}
+
+.dreams-page-btn:hover::before {
+    border-width: 0 50px 50px 0;
+    opacity: 1;
+}
+
+.page-icon {
+    font-size: 2.5rem;
+    animation: bookFloat 3s ease-in-out infinite;
+}
+
+@keyframes bookFloat {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-5px) rotate(-5deg); }
+}
+
+.page-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.page-label {
+    font-family: var(--font-poetic, serif);
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--color-gold, #c9a961);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+.page-chapter {
+    font-family: var(--font-display, serif);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-chocolate, #333);
+    margin-top: 0.3rem;
+    transition: color 0.3s ease;
+}
+
+.dreams-page-btn:hover .page-chapter {
+    color: var(--color-pink, #d4758c);
+}
+
+/* ============================================
+   OVERLAY DE TRANSICIÓN (PÁGINA QUE SE VOLTEA)
+   ============================================ */
+.dreams-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+    perspective: 2000px;
+}
+
+.dreams-page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #fdfbf7 0%, #f5efe6 50%, #fdfbf7 100%);
+    transform-origin: left center;
+    transform: rotateY(90deg);
+    opacity: 0;
+    box-shadow: -20px 0 60px rgba(0, 0, 0, 0.3);
+}
+
+.dreams-page.flipping {
+    animation: pageFlip 1.2s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+}
+
+@keyframes pageFlip {
+    0% {
+        transform: rotateY(90deg);
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+    50% {
+        transform: rotateY(0deg);
+        opacity: 1;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        transform: rotateY(-90deg);
+        opacity: 0;
+    }
+}
+
+/* Contenido decorativo en la página */
+.dreams-page-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: var(--font-display, serif);
+    color: var(--color-gold, #c9a961);
+}
+
+.dreams-page-content .chapter-number {
+    font-size: 1rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    opacity: 0.7;
+}
+
+.dreams-page-content .chapter-title {
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-style: italic;
+    font-weight: 400;
+    color: var(--color-pink, #d4758c);
+    line-height: 1;
+}
+
+.dreams-page-content .chapter-subtitle {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    color: var(--color-chocolate, #333);
+    opacity: 0.6;
+    font-style: italic;
+}
+
+/* Partículas que salen volando */
+.dreams-particle {
+    position: fixed;
+    pointer-events: none;
+    z-index: 10000;
+    font-size: 1.5rem;
+    animation: particleFly 1.5s ease-out forwards;
+}
+
+@keyframes particleFly {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(0deg);
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--tx), var(--ty)) scale(1) rotate(var(--rot));
+        opacity: 0;
+    }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .dreams-page-btn {
+        padding: 1.2rem 2rem;
+        gap: 1rem;
+    }
+    
+    .page-icon {
+        font-size: 2rem;
+    }
+    
+    .page-chapter {
+        font-size: 1.2rem;
+    }
+}
+/* ============================================
+   BOTÓN WOW: MY FRIENDS → MY DREAMS
+   ============================================ */
+.dreams-transition-wrapper {
+    text-align: center;
+    margin: 5rem 0 3rem;
+    padding: 2rem;
+    position: relative;
+}
+
+.dreams-page-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem 3rem;
+    background: linear-gradient(135deg, #fdfbf7 0%, #f5efe6 100%);
+    border: 2px solid var(--color-gold, #c9a961);
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: var(--font-display, serif);
+    color: var(--color-chocolate, #333);
+    transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    box-shadow: 
+        0 10px 30px rgba(201, 169, 97, 0.2),
+        inset 0 0 0 1px rgba(201, 169, 97, 0.3);
+    overflow: hidden;
+}
+
+.dreams-page-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 40px 40px 0;
+    border-color: transparent var(--color-gold, #c9a961) transparent transparent;
+    transition: all 0.4s ease;
+    opacity: 0.6;
+}
+
+.dreams-page-btn:hover {
+    transform: translateY(-5px) rotate(-1deg);
+    box-shadow: 
+        0 20px 50px rgba(212, 117, 140, 0.4),
+        0 0 0 1px var(--color-gold, #c9a961);
+}
+
+.dreams-page-btn:hover::before {
+    border-width: 0 50px 50px 0;
+    opacity: 1;
+}
+
+.page-icon {
+    font-size: 2.5rem;
+    animation: bookFloat 3s ease-in-out infinite;
+}
+
+@keyframes bookFloat {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-5px) rotate(-5deg); }
+}
+
+.page-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.page-label {
+    font-family: var(--font-poetic, serif);
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--color-gold, #c9a961);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+.page-chapter {
+    font-family: var(--font-display, serif);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-chocolate, #333);
+    margin-top: 0.3rem;
+    transition: color 0.3s ease;
+}
+
+.dreams-page-btn:hover .page-chapter {
+    color: var(--color-pink, #d4758c);
+}
+
+/* ============================================
+   OVERLAY DE TRANSICIÓN
+   ============================================ */
+.dreams-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+    perspective: 2000px;
+}
+
+.dreams-page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #fdfbf7 0%, #f5efe6 50%, #fdfbf7 100%);
+    transform-origin: left center;
+    transform: rotateY(90deg);
+    opacity: 0;
+    box-shadow: -20px 0 60px rgba(0, 0, 0, 0.3);
+}
+
+.dreams-page.flipping {
+    animation: pageFlip 1.2s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+}
+
+@keyframes pageFlip {
+    0% {
+        transform: rotateY(90deg);
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+    50% {
+        transform: rotateY(0deg);
+        opacity: 1;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        transform: rotateY(-90deg);
+        opacity: 0;
+    }
+}
+
+.dreams-page-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: var(--font-display, serif);
+    color: var(--color-gold, #c9a961);
+}
+
+.dreams-page-content .chapter-number {
+    font-size: 1rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    opacity: 0.7;
+}
+
+.dreams-page-content .chapter-title {
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-style: italic;
+    font-weight: 400;
+    color: var(--color-pink, #d4758c);
+    line-height: 1;
+}
+
+.dreams-page-content .chapter-subtitle {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    color: var(--color-chocolate, #333);
+    opacity: 0.6;
+    font-style: italic;
+}
+
+/* Partículas mágicas */
+.dreams-particle {
+    position: fixed;
+    pointer-events: none;
+    z-index: 10000;
+    font-size: 1.5rem;
+    animation: particleFly 1.5s ease-out forwards;
+}
+
+@keyframes particleFly {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(0deg);
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--tx), var(--ty)) scale(1) rotate(var(--rot));
+        opacity: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .dreams-page-btn {
+        padding: 1.2rem 2rem;
+        gap: 1rem;
+    }
+    
+    .page-icon {
+        font-size: 2rem;
+    }
+    
+    .page-chapter {
+        font-size: 1.2rem;
+    }
+}
+/* ============================================
+   BOTÓN WOW: MY FRIENDS → MY DREAMS
+   ============================================ */
+.dreams-transition-wrapper {
+    text-align: center;
+    margin: 5rem 0 3rem;
+    padding: 2rem;
+    position: relative;
+}
+
+.dreams-page-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem 3rem;
+    background: linear-gradient(135deg, #fdfbf7 0%, #f5efe6 100%);
+    border: 2px solid var(--color-gold, #c9a961);
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: var(--font-display, serif);
+    color: var(--color-chocolate, #333);
+    transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    box-shadow: 
+        0 10px 30px rgba(201, 169, 97, 0.2),
+        inset 0 0 0 1px rgba(201, 169, 97, 0.3);
+    overflow: hidden;
+}
+
+.dreams-page-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 40px 40px 0;
+    border-color: transparent var(--color-gold, #c9a961) transparent transparent;
+    transition: all 0.4s ease;
+    opacity: 0.6;
+}
+
+.dreams-page-btn:hover {
+    transform: translateY(-5px) rotate(-1deg);
+    box-shadow: 
+        0 20px 50px rgba(212, 117, 140, 0.4),
+        0 0 0 1px var(--color-gold, #c9a961);
+}
+
+.dreams-page-btn:hover::before {
+    border-width: 0 50px 50px 0;
+    opacity: 1;
+}
+
+.page-icon {
+    font-size: 2.5rem;
+    animation: bookFloat 3s ease-in-out infinite;
+}
+
+@keyframes bookFloat {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-5px) rotate(-5deg); }
+}
+
+.page-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.page-label {
+    font-family: var(--font-poetic, serif);
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--color-gold, #c9a961);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+.page-chapter {
+    font-family: var(--font-display, serif);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-chocolate, #333);
+    margin-top: 0.3rem;
+    transition: color 0.3s ease;
+}
+
+.dreams-page-btn:hover .page-chapter {
+    color: var(--color-pink, #d4758c);
+}
+
+/* ============================================
+   OVERLAY DE TRANSICIÓN
+   ============================================ */
+.dreams-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+    perspective: 2000px;
+}
+
+.dreams-page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #fdfbf7 0%, #f5efe6 50%, #fdfbf7 100%);
+    transform-origin: left center;
+    transform: rotateY(90deg);
+    opacity: 0;
+    box-shadow: -20px 0 60px rgba(0, 0, 0, 0.3);
+}
+
+.dreams-page.flipping {
+    animation: pageFlip 1.2s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+}
+
+@keyframes pageFlip {
+    0% {
+        transform: rotateY(90deg);
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+    50% {
+        transform: rotateY(0deg);
+        opacity: 1;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        transform: rotateY(-90deg);
+        opacity: 0;
+    }
+}
+
+.dreams-page-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: var(--font-display, serif);
+    color: var(--color-gold, #c9a961);
+}
+
+.dreams-page-content .chapter-number {
+    font-size: 1rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    opacity: 0.7;
+}
+
+.dreams-page-content .chapter-title {
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-style: italic;
+    font-weight: 400;
+    color: var(--color-pink, #d4758c);
+    line-height: 1;
+}
+
+.dreams-page-content .chapter-subtitle {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    color: var(--color-chocolate, #333);
+    opacity: 0.6;
+    font-style: italic;
+}
+
+/* Partículas mágicas */
+.dreams-particle {
+    position: fixed;
+    pointer-events: none;
+    z-index: 10000;
+    font-size: 1.5rem;
+    animation: particleFly 1.5s ease-out forwards;
+}
+
+@keyframes particleFly {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(0deg);
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--tx), var(--ty)) scale(1) rotate(var(--rot));
+        opacity: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .dreams-page-btn {
+        padding: 1.2rem 2rem;
+        gap: 1rem;
+    }
+    
+    .page-icon {
+        font-size: 2rem;
+    }
+    
+    .page-chapter {
+        font-size: 1.2rem;
+    }
+}
